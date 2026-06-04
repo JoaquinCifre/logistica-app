@@ -211,7 +211,7 @@ gap-4
   className="
   text-2xl
   font-semibold
-  mb-6
+  mb-3
   "
 >
   Nuevo Pedido
@@ -258,11 +258,11 @@ mx-auto
     size={18}
     className="
     absolute
-    right-4
+    right-3
     top-1/2
     -translate-y-1/2
     pointer-events-none
-    text-slate-500
+    text-slate-400
     "
   />
 
@@ -435,7 +435,7 @@ mb-4
 max-w-[900px]
 mx-auto
     mt-3
-    mb-8
+    mb-3
     border
     border-slate-300
     rounded-xl
@@ -447,10 +447,10 @@ mx-auto
   <button
     className="
     absolute
-    right-3
+    left-3
     top-1/2
     -translate-y-1/2
-    text-slate-500
+    text-slate-400
     "
   >
     <Search size={18} />
