@@ -191,17 +191,22 @@ transition-all
 duration-200
 "
 >
-<div
-  className="
-  bg-white
-  rounded-2xl
-  border
-  border-slate-200
-  p-4
-  shadow-sm
-  mb-4
-  "
+  
+      <h2
+ className="
+flex
+items-center
+justify-center
+gap-3
+cursor-pointer
+font-semibold
+text-2xl
+
+text-slate-800
+"
 >
+  Clientes
+</h2>
   <input
     className="
     w-full
@@ -215,6 +220,17 @@ duration-200
     onChange={(e) => setSearch(e.target.value)}
   />
 </div>
+<div
+  className="
+  bg-white
+  rounded-2xl
+  border
+  border-slate-200
+  p-4
+  shadow-sm
+  mb-4
+  "
+>
       <h2
   className="
   text-2xl
@@ -433,21 +449,7 @@ text-slate-800
   p-6
   "
 >
-      <h2
- className="
-flex
-items-center
-justify-center
-gap-3
-cursor-pointer
-font-semibold
-text-2xl
-
-text-slate-800
-"
->
-  Clientes
-</h2>
+  
 
 
 
