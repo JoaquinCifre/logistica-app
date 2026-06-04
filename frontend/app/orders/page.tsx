@@ -312,7 +312,17 @@ className="
   />
 
 </div>
-
+<label
+  className="
+  block
+  text-sm
+  font-medium
+  text-slate-700
+  mb-2
+  "
+>
+  Fecha
+</label>
         <input className="
 w-full
 border
@@ -425,7 +435,7 @@ mb-4
 <div className="relative mb-4">
 
   <input
-    placeholder="Buscar cliente..."
+    placeholder="Buscar por cliente..."
     value={search}
     onChange={(e) =>
       setSearch(e.target.value)
@@ -457,6 +467,17 @@ mb-4
 </button>
 
 </div>
+<label
+  className="
+  block
+  text-sm
+  font-medium
+  text-slate-700
+  mb-2
+  "
+>
+  Fecha
+</label>
 <input className="
 w-full
 border

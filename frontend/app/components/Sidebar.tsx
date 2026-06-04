@@ -76,6 +76,8 @@ export default function Sidebar() {
   flex-row
   md:flex-col
   gap-2
+  mt-8 
+  md:mt-0
   justify-center
   "
 >
