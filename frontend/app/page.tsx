@@ -169,18 +169,16 @@ setTimeout(() => {
   </div>
 
 )}
-<div
-  className="
-  grid
-  grid-cols-1 lg:grid-cols-5
-  gap-6
-  "
->
+<div className="
+  flex
+  flex-col
+  gap-4
+">
 <div
   className="
 bg-slate-50
 hover:bg-white
-lg:col-span-2
+
 border
 border-slate-200
 rounded-2xl
@@ -205,11 +203,11 @@ duration-200
   Nuevo Cliente
 </h2>
 
-      <div  className="
-  grid
-  grid-cols-1 lg:grid-cols-5
+      <div className="
+  flex
+  flex-col
   gap-4
-  ">
+">
         <div>
   <label
     className="
@@ -382,7 +380,7 @@ text-slate-800
 <button
   onClick={createClient}
   className="
-  md:col-span-2
+ 
   w-full
   bg-blue-600
   hover:bg-blue-700
@@ -479,7 +477,7 @@ hover:bg-white
 border
 border-slate-200
 rounded-2xl
-lg:col-span-2
+
 p-5
 mb-4
 shadow-sm
