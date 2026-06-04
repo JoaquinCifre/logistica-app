@@ -6,7 +6,14 @@ import dynamic from "next/dynamic";
 import {
   Truck,
   Package,
-  Users,
+  User,
+  Clock,
+  MessageCircle,
+  FileText,
+  MapPin,
+  Phone,
+  Navigation,
+  Clock3
 } from "lucide-react";
 const MapView = dynamic(
   () => import("../components/OperationsMap"),
@@ -170,15 +177,7 @@ p-8
   Entrega 1 de {route.length}
 </div>
 
-<div
-  className="
-  text-sm
-  text-slate-500
-  mb-6
-  "
->
-  Restan {route.length - 1} entregas
-</div>
+
 
         <div className="text-sm text-gray-500">
           Próxima parada
@@ -234,36 +233,54 @@ p-8
 )}
 
 </div>
-        <div className="mt-3">
-          📍 {order.client.address}
-        </div>
+        <div className="flex items-center gap-2 mt-2">
+  <MapPin size={16} />
+  {order.client.address}
+</div>
 
-        <div className="mt-2">
-          📞 {order.client.phone}
-        </div>
-        {order.client.contactName && (
-  <div className="mt-2">
-    👤 {order.client.contactName}
-  </div>
-)}
+        <div className="flex items-center gap-2 mt-2">
+  <Phone size={16} />
+  {order.client.phone}
+</div>
+        <div className="flex items-center gap-2 mt-2">
+  <User size={16} />
+  {order.client.contactName}
+</div>
 
-{order.client.schedule && (
-  <div className="mt-2">
-    🕐 {order.client.schedule}
-  </div>
-)}
+<div className="flex items-center gap-2 mt-2">
+  <Clock3 size={16} />
+  {order.client.schedule}
+</div>
 
-{order.client.deliveryInstructions && (
-  <div className="mt-2 border rounded p-3">
-    📦 {order.client.deliveryInstructions}
-  </div>
-)}
+<div className="
+flex
+items-start
+gap-2
+mt-2
+border
+border-slate-200
+rounded-xl
+p-3
+bg-slate-50
+">
+  <Package size={16} className="mt-1 shrink-0" />
+  <span>{order.client.deliveryInstructions}</span>
+</div>
 
-{order.client.notes && (
-  <div className="mt-2 border rounded p-3">
-    📝 {order.client.notes}
-  </div>
-)}
+<div className="
+flex
+items-start
+gap-2
+mt-2
+border
+border-slate-200
+rounded-xl
+p-3
+bg-slate-50
+">
+  <FileText size={16} className="mt-1 shrink-0" />
+  <span>{order.client.notes}</span>
+</div>
 
         <div className="
 flex
@@ -274,42 +291,50 @@ mt-6
 ">
 
           <a
-            href={`https://wa.me/${order.client.phone}`}
-            target="_blank"
-            className="
-bg-white
-border
-border-slate-300
-rounded-xl
-px-4
-py-3
-font-medium
-hover:bg-slate-50
-transition-all
-"
-          >
-            WhatsApp
-          </a>
+  href={`https://wa.me/${order.client.phone}`}
+  target="_blank"
+  className="
+  flex
+  items-center
+  justify-center
+  gap-2
+  bg-green-600
+  hover:bg-green-700
+  text-white
+  rounded-xl
+  px-4
+  py-3
+  font-semibold
+  transition-all
+  "
+>
+  <MessageCircle size={18} />
+  WhatsApp
+</a>
 
           <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-              order.client.address
-            )}`}
-            target="_blank"
-            className="
-bg-white
-border
-border-slate-300
-rounded-xl
-px-4
-py-3
-font-medium
-hover:bg-slate-50
-transition-all
-"
-          >
-            Navegar
-          </a>
+  href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+    order.client.address
+  )}`}
+  target="_blank"
+  className="
+  flex
+  items-center
+  justify-center
+  gap-2
+  bg-slate-800
+  hover:bg-slate-900
+  text-white
+  rounded-xl
+  px-4
+  py-3
+  font-semibold
+  transition-all
+  "
+>
+  <Navigation size={18} />
+  Navegar
+</a>
 
         </div>
 
