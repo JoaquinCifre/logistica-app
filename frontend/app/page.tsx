@@ -126,13 +126,13 @@ setTimeout(() => {
     <main
 
   className="
-  max-w-screen-2xl
+  max-w-[1400px]
   mx-auto
-  "
+"
 >
       <h2
   className="
-  text-4xl
+  text-3xl
   font-bold
   text-slate-900
   mb-8
@@ -170,12 +170,14 @@ setTimeout(() => {
 
 )}
 <div className="
-  flex
-  flex-col
-  gap-4
+  grid
+  grid-cols-1
+  xl:grid-cols-3
+  gap-6
 ">
 <div
   className="
+  xl:col-span-1
 bg-slate-50
 hover:bg-white
 
@@ -189,10 +191,33 @@ transition-all
 duration-200
 "
 >
-
+<div
+  className="
+  bg-white
+  rounded-2xl
+  border
+  border-slate-200
+  p-4
+  shadow-sm
+  mb-4
+  "
+>
+  <input
+    className="
+    w-full
+    border
+    border-slate-300
+    rounded-xl
+    p-3
+    "
+    placeholder="Buscar cliente..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+  />
+</div>
       <h2
   className="
-  text-3xl
+  text-2xl
   font-semibold
   mb-10
   mt-4
@@ -399,7 +424,7 @@ text-slate-800
       </div>
 <div
   className="
-  lg:col-span-3
+  xl:col-span-2
   bg-white
   rounded-2xl
   border
@@ -416,7 +441,7 @@ justify-center
 gap-3
 cursor-pointer
 font-semibold
-text-3xl
+text-2xl
 
 text-slate-800
 "
@@ -424,27 +449,7 @@ text-slate-800
   Clientes
 </h2>
 
-<input
-  className="
-bg-white
-border
-w-full
-border-slate-300
-rounded-2xl
-p-5
-mt-5
-mb-8
-shadow-sm
-hover:shadow-md
-transition-all
-"
-  placeholder="Buscar cliente..."
-  value={search}
-  onChange={(e) =>
-    setSearch(e.target.value)
-  }
-  
-/>
+
 
 {clients
   .filter((client) =>
@@ -472,13 +477,14 @@ transition-all
     <div
       key={client.id}
       className="
+      
 bg-slate-50
 hover:bg-white
 border
 border-slate-200
 rounded-2xl
 
-p-5
+p-3
 mb-4
 shadow-sm
 hover:shadow-md

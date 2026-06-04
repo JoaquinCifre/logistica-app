@@ -34,7 +34,7 @@ export default function Sidebar() {
   <aside
   className="
   w-full
-  md:w-[260px]
+  md:w-[200px]
   md:min-h-screen
   "
   style={{
@@ -49,9 +49,10 @@ export default function Sidebar() {
   flex
   items-center
   justify-center
-  display-center
+  
   gap-3
   mb-4
+  mt-4
   md:mb-10
   "
 >
