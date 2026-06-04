@@ -172,7 +172,7 @@ setTimeout(() => {
 <div
   className="
   grid
-  grid-cols-3
+  grid-cols-1 md:grid-cols-3
   gap-6
   "
 >
@@ -206,7 +206,7 @@ duration-200
 
       <div  className="
   grid
-  grid-cols-2
+  grid-cols-1 md:grid-cols-2
   gap-4
   ">
         <div>
@@ -347,7 +347,7 @@ duration-200
 
         <label
   className="
-  col-span-2
+  md:col-span-2
 block
 mb-2
  flex
@@ -362,7 +362,7 @@ text-slate-800
 
         <input
   className="
-  col-span-2
+  md:col-span-2
   w-full
   border
   border-slate-300
@@ -381,7 +381,7 @@ text-slate-800
 <button
   onClick={createClient}
   className="
-  col-span-2
+  md:col-span-2
   w-full
   bg-blue-600
   hover:bg-blue-700
@@ -400,7 +400,7 @@ text-slate-800
       </div>
 <div
   className="
-  col-span-2
+  md:col-span-2
   bg-white
   rounded-2xl
   border

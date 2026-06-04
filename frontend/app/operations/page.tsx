@@ -265,7 +265,13 @@ p-8
   </div>
 )}
 
-        <div className="flex gap-3 mt-6">
+        <div className="
+flex
+flex-col
+md:flex-row
+gap-3
+mt-6
+">
 
           <a
             href={`https://wa.me/${order.client.phone}`}
@@ -307,7 +313,13 @@ transition-all
 
         </div>
 
-        <div className="flex gap-3 mt-6">
+        <div className="
+flex
+flex-col
+md:flex-row
+gap-3
+mt-6
+">
 
           <button
   onClick={() => {

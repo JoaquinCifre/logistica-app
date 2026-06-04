@@ -36,19 +36,22 @@ export default function RootLayout({
   }}
 >
         <div
-          style={{
-            display: "flex",
-            minHeight: "100vh",
-          }}
-        >
+  className="
+  flex
+  flex-col
+  md:flex-row
+  min-h-screen
+  "
+>
           <Sidebar />
 
           <main
-  style={{
-    flex: 1,
-    padding: "32px",
-    overflowY: "auto",
-  }}
+  className="
+  flex-1
+  p-4
+  md:p-8
+  overflow-y-auto
+  "
 >
             {children}
           </main>

@@ -188,7 +188,7 @@ setTimeout(() => {
 <div
   className="
   grid
-  grid-cols-3
+  grid-cols-1 md:grid-cols-3
   gap-6
   "
 >
@@ -406,7 +406,7 @@ mb-4
       </div>
 <div
   className="
-  col-span-2
+  md:col-span-2
   bg-white
   rounded-2xl
   border

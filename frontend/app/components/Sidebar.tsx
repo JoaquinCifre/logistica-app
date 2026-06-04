@@ -32,42 +32,49 @@ export default function Sidebar() {
 
   return (
   <aside
-    style={{
-      width: "260px",
-      minHeight: "100vh",
-      background:
-  "linear-gradient(180deg,#0F172A 0%,#111827 100%)",
-      color: "white",
-      padding: "24px",
-    }}
-  >
-    <div
+  className="
+  w-full
+  md:w-[260px]
+  md:min-h-screen
+  "
   style={{
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
-    marginBottom: "40px",
+    background:
+      "linear-gradient(180deg,#0F172A 0%,#111827 100%)",
+    color: "white",
+    padding: "24px",
   }}
+>
+    <div
+  className="
+  flex
+  items-center
+  gap-3
+  mb-4
+  md:mb-10
+  "
 >
   <Truck size={34} />
 
   <span
-    style={{
-      fontSize: "24px",
-      fontWeight: 700,
-    }}
-  >
+  className="
+  text-xl
+  md:text-2xl
+  font-bold
+  "
+>
     Logística CLS
   </span>
 </div>
 
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px",
-      }}
-    >
+  className="
+  flex
+  flex-row
+  md:flex-col
+  gap-2
+  overflow-x-auto
+  "
+>
       {links.map((link) => {
 
   const Icon = link.icon;
