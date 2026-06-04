@@ -166,7 +166,7 @@ p-8
   items-center
   bg-blue-50
   text-blue-700
-  px-4
+  px-2
   py-2
   rounded-full
   text-sm
@@ -233,18 +233,63 @@ p-8
 )}
 
 </div>
-        <div className="flex items-center gap-2 mt-2">
-  <MapPin size={16} />
-  {order.client.address}
+        <div
+  className="
+  flex
+  items-start
+  gap-2
+  mt-2
+  border
+  border-slate-200
+  rounded-xl
+  p-3
+  bg-slate-50
+  "
+>
+  <MapPin
+    size={16}
+    className="mt-1 shrink-0"
+  />
+  <span>{order.client.address}</span>
 </div>
 
-        <div className="flex items-center gap-2 mt-2">
-  <Phone size={16} />
-  {order.client.phone}
+        <div
+  className="
+  flex
+  items-start
+  gap-2
+  mt-2
+  border
+  border-slate-200
+  rounded-xl
+  p-3
+  bg-slate-50
+  "
+>
+  <Phone
+    size={16}
+    className="mt-1 shrink-0"
+  />
+  <span>{order.client.phone}</span>
 </div>
-        <div className="flex items-center gap-2 mt-2">
-  <User size={16} />
-  {order.client.contactName}
+        <div
+  className="
+  flex
+  items-start
+  gap-2
+  mt-2
+  border
+  border-slate-200
+  rounded-xl
+  p-3
+  bg-slate-50
+  "
+>
+  <User
+    size={16}
+    className="mt-1 shrink-0"
+  />
+  <span>{order.client.contactName}</span>
 </div>
 
 <div className="flex items-center gap-2 mt-2">
@@ -440,7 +485,7 @@ transition-all
         </div>
 
         <div className="text-sm">
-          📍 {nextOrder.client.address}
+         <MapPin size={16} /> {nextOrder.client.address}
         </div>
 
       </div>
