@@ -219,7 +219,7 @@ text-slate-800
     value={search}
     onChange={(e) => setSearch(e.target.value)}
   />
-</div>
+
 
 <div
   className="
@@ -266,6 +266,7 @@ text-slate-800
 bg-slate-50
 hover:bg-white
 border
+mt-8
 border-slate-200
 rounded-2xl
 
@@ -426,7 +427,7 @@ transition-all
    
 
     
-  ))}</div></div>
+  ))}</div></div></div>
 
   <div
   className="
@@ -436,7 +437,7 @@ transition-all
   border-slate-200
   p-4
   shadow-sm
-  mb-4
+  mt-4
   "
 >
       <h2

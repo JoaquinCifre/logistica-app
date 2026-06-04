@@ -63,6 +63,7 @@ export default function Sidebar() {
   text-xl
   md:text-2xl
   font-bold
+  whitespace-nowrap
   "
 >
     Logística CLS
