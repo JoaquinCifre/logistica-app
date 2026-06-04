@@ -41,7 +41,7 @@ export default function Sidebar() {
     background:
       "linear-gradient(180deg,#0F172A 0%,#111827 100%)",
     color: "white",
-    padding: window.innerWidth < 768 ? "12px" : "24px",
+   
   }}
 >
     <div
