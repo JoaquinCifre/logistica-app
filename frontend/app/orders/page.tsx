@@ -153,6 +153,8 @@ setTimeout(() => {
   text-4xl
   font-bold
   mb-8
+  max-w-[1000px]
+mx-auto
   "
 >
   Pedidos
@@ -225,6 +227,8 @@ setTimeout(() => {
           }
         className="
     w-full
+    max-w-[1000px]
+mx-auto
     lg:col-span-2
     border
     border-slate-300
@@ -426,6 +430,8 @@ mb-4
       setSearch(e.target.value)
     }
     className="
+    max-w-[1000px]
+mx-auto
     w-full
     mt-3
     border
@@ -455,6 +461,8 @@ border
 border-slate-300
 rounded-xl
 p-3
+max-w-[1000px]
+mx-auto
 mb-4
 "
   type="date"

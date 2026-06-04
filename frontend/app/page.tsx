@@ -126,7 +126,7 @@ setTimeout(() => {
     <main
 
   className="
-  max-w-[1400px]
+  max-w-[1200px]
   mx-auto
 "
 >
@@ -136,6 +136,7 @@ setTimeout(() => {
   font-bold
   text-slate-900
   mb-8
+ 
   "
 >
   Clientes
@@ -180,7 +181,8 @@ setTimeout(() => {
   xl:col-span-1
 bg-slate-50
 hover:bg-white
-
+ max-w-[1000px]
+  mx-auto
 border
 border-slate-200
 rounded-2xl
@@ -214,6 +216,7 @@ text-slate-800
     border-slate-300
     rounded-xl
     p-3
+    mb-3
     "
     placeholder="Buscar cliente..."
     value={search}
@@ -269,7 +272,8 @@ border
 mt-8
 border-slate-200
 rounded-2xl
-
+ max-w-[1000px]
+  mx-auto
 p-3
 mb-4
 shadow-sm
@@ -433,6 +437,8 @@ transition-all
   className="
   bg-white
   rounded-2xl
+   max-w-[1000px]
+  mx-auto
   border
   border-slate-200
   p-4

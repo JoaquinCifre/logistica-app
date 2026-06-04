@@ -34,7 +34,7 @@ export default function Sidebar() {
   <aside
   className="
   w-full
-  md:w-[200px]
+  md:w-[240px]
   md:min-h-screen
   "
   style={{
@@ -56,12 +56,12 @@ export default function Sidebar() {
   md:mb-10
   "
 >
-  <Truck size={34} />
+  <Truck size={30} />
 
   <span
   className="
-  text-xl
-  md:text-2xl
+  text-lg
+  md:text-xl
   font-bold
   whitespace-nowrap
   "
