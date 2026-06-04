@@ -144,7 +144,7 @@ setTimeout(() => {
   return (
     <main
   className="
-  max-w-screen-2xl
+  max-w-none
   mx-auto
   "
 >
@@ -188,7 +188,7 @@ setTimeout(() => {
 <div
   className="
   grid
-  grid-cols-1 md:grid-cols-3
+  grid-cols-1 lg:grid-cols-5
   gap-6
   "
 >
@@ -225,6 +225,7 @@ setTimeout(() => {
           }
         className="
     w-full
+    lg:col-span-2
     border
     border-slate-300
     rounded-xl

@@ -172,7 +172,7 @@ setTimeout(() => {
 <div
   className="
   grid
-  grid-cols-1 md:grid-cols-3
+  grid-cols-1 lg:grid-cols-5
   gap-6
   "
 >
@@ -180,6 +180,7 @@ setTimeout(() => {
   className="
 bg-slate-50
 hover:bg-white
+lg:col-span-2
 border
 border-slate-200
 rounded-2xl
@@ -206,7 +207,7 @@ duration-200
 
       <div  className="
   grid
-  grid-cols-1 md:grid-cols-2
+  grid-cols-1 lg:grid-cols-5
   gap-4
   ">
         <div>
@@ -347,7 +348,7 @@ duration-200
 
         <label
   className="
-  md:col-span-2
+  lg:col-span-3
 block
 mb-2
  flex
@@ -362,7 +363,7 @@ text-slate-800
 
         <input
   className="
-  md:col-span-2
+  lg:col-span-3
   w-full
   border
   border-slate-300
@@ -400,7 +401,7 @@ text-slate-800
       </div>
 <div
   className="
-  md:col-span-2
+  lg:col-span-3
   bg-white
   rounded-2xl
   border
@@ -478,6 +479,7 @@ hover:bg-white
 border
 border-slate-200
 rounded-2xl
+lg:col-span-2
 p-5
 mb-4
 shadow-sm

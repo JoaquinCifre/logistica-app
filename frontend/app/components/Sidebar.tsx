@@ -49,6 +49,7 @@ export default function Sidebar() {
   flex
   items-center
   justify-center
+  display-center
   gap-3
   mb-4
   md:mb-10
