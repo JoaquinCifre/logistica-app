@@ -44,10 +44,11 @@ export default function Sidebar() {
    
   }}
 >
-    <div
+   <div
   className="
   flex
   items-center
+  justify-center
   gap-3
   mb-4
   md:mb-10
@@ -69,9 +70,10 @@ export default function Sidebar() {
   <div
   className="
   flex
-  flex-wrap
+  flex-row
   md:flex-col
   gap-2
+  justify-center
   "
 >
       {links.map((link) => {
