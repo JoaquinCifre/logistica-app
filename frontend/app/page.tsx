@@ -181,8 +181,9 @@ setTimeout(() => {
   xl:col-span-1
 bg-slate-50
 hover:bg-white
- max-w-[1000px]
-  mx-auto
+max-w-[800px]
+mx-auto
+w-full
 border
 border-slate-200
 rounded-2xl
@@ -207,7 +208,7 @@ text-2xl
 text-slate-800
 "
 >
-  Clientes
+  Lista de Clientes
 </h2>
   <input
     className="
@@ -265,15 +266,16 @@ text-slate-800
     <div
       key={client.id}
       className="
-      
+      w-full
 bg-slate-50
 hover:bg-white
 border
 mt-8
 border-slate-200
 rounded-2xl
- max-w-[1000px]
-  mx-auto
+ max-w-[800px]
+mx-auto
+w-full
 p-3
 mb-4
 shadow-sm
@@ -437,8 +439,9 @@ transition-all
   className="
   bg-white
   rounded-2xl
-   max-w-[1000px]
-  mx-auto
+   max-w-[800px]
+mx-auto
+w-full
   border
   border-slate-200
   p-4
