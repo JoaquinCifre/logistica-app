@@ -173,7 +173,9 @@ setTimeout(() => {
 <div className="
   grid
   grid-cols-1
-  xl:grid-cols-3
+  w-full
+  max-w-[900px]
+  mx-auto
   gap-6
 ">
 <div
@@ -270,11 +272,11 @@ text-slate-800
 bg-slate-50
 hover:bg-white
 border
-mt-8
+mt-10
 border-slate-200
 rounded-2xl
- max-w-[800px]
-mx-auto
+
+
 w-full
 p-3
 mb-4
