@@ -1,0 +1,350 @@
+"use client";
+
+import { useEffect, useState, use } from "react";
+import axios from "axios";
+
+export default function OrderPage({
+  params,
+}: {
+  params: Promise<{
+    id: string;
+  }>;
+}) {
+
+  const { id } = use(params);
+
+  const [order, setOrder] =
+    useState<any>(null);
+
+  const [clients, setClients] =
+    useState<any[]>([]);
+
+  useEffect(() => {
+    loadOrder();
+    loadClients();
+  }, []);
+
+  const loadOrder =
+    async () => {
+
+      const response =
+        await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/orders`
+        );
+
+      const found =
+        response.data.find(
+          (o: any) =>
+            o.id === Number(id)
+        );
+
+      setOrder(found);
+    };
+
+  const loadClients =
+    async () => {
+
+      const response =
+        await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/clients`
+        );
+
+      setClients(response.data);
+    };
+
+  const saveOrder =
+    async () => {
+
+      await axios.patch(
+        `${process.env.NEXT_PUBLIC_API_URL}/orders/${id}`,
+        {
+          date: order.date,
+          shift: order.shift,
+          notes: order.notes,
+          priority:
+            order.priority,
+          client: {
+            id:
+              order.client.id,
+          },
+        }
+      );
+
+      window.location.href =
+        "/orders";
+    };
+
+  const deleteOrder =
+    async () => {
+
+      const confirmed =
+        confirm(
+          "¿Eliminar pedido?"
+        );
+
+      if (!confirmed) {
+        return;
+      }
+
+      await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/orders/${id}`
+      );
+
+      window.location.href =
+        "/orders";
+    };
+
+  if (!order) {
+    return (
+      <div>Cargando...</div>
+    );
+  }
+
+  return (
+    <main
+      className="
+      max-w-5xl
+      mx-auto
+      p-6
+      "
+    >
+
+      <h1
+        className="
+        text-4xl
+        font-bold
+        mb-8
+        "
+      >
+        Editar Pedido
+      </h1>
+
+      <button
+        onClick={() =>
+          window.location.href =
+            "/orders"
+        }
+        className="
+        mb-6
+        px-4
+        py-2
+        border
+        border-slate-300
+        rounded-xl
+        "
+      >
+        ← Volver
+      </button>
+
+      <div
+        className="
+        bg-white
+        rounded-2xl
+        border
+        border-slate-200
+        shadow-sm
+        p-8
+        "
+      >
+
+        <label
+          className="
+          block
+          mb-2
+          font-semibold
+          "
+        >
+          Cliente
+        </label>
+
+        <select
+          value={
+            order.client.id
+          }
+          onChange={(e) =>
+            setOrder({
+              ...order,
+              client: {
+                id: Number(
+                  e.target.value
+                ),
+              },
+            })
+          }
+          className="
+          w-full
+          border
+          rounded-xl
+          p-3
+          mb-4
+          "
+        >
+          {clients.map(
+            (client) => (
+              <option
+                key={client.id}
+                value={
+                  client.id
+                }
+              >
+                {client.name}
+              </option>
+            )
+          )}
+        </select>
+
+        <label className="block mb-2 font-semibold">
+          Fecha
+        </label>
+
+        <input
+          type="date"
+          value={order.date}
+          onChange={(e) =>
+            setOrder({
+              ...order,
+              date:
+                e.target.value,
+            })
+          }
+          className="
+          w-full
+          border
+          rounded-xl
+          p-3
+          mb-4
+          "
+        />
+
+        <label className="block mb-2 font-semibold">
+          Turno
+        </label>
+
+        <select
+          value={order.shift}
+          onChange={(e) =>
+            setOrder({
+              ...order,
+              shift:
+                e.target.value,
+            })
+          }
+          className="
+          w-full
+          border
+          rounded-xl
+          p-3
+          mb-4
+          "
+        >
+          <option value="MORNING">
+            Mañana
+          </option>
+
+          <option value="AFTERNOON">
+            Tarde
+          </option>
+        </select>
+
+        <label className="block mb-2 font-semibold">
+          Prioridad
+        </label>
+
+        <select
+          value={
+            order.priority
+          }
+          onChange={(e) =>
+            setOrder({
+              ...order,
+              priority:
+                e.target.value,
+            })
+          }
+          className="
+          w-full
+          border
+          rounded-xl
+          p-3
+          mb-4
+          "
+        >
+          <option value="NORMAL">
+            Normal
+          </option>
+
+          <option value="IMPORTANT">
+            Importante
+          </option>
+
+          <option value="URGENT">
+            Urgente
+          </option>
+        </select>
+
+        <label className="block mb-2 font-semibold">
+          Observaciones
+        </label>
+
+        <textarea
+          value={
+            order.notes || ""
+          }
+          onChange={(e) =>
+            setOrder({
+              ...order,
+              notes:
+                e.target.value,
+            })
+          }
+          className="
+          w-full
+          border
+          rounded-xl
+          p-3
+          mb-6
+          "
+        />
+
+        <div className="flex gap-3">
+
+          <button
+            onClick={
+              saveOrder
+            }
+            className="
+            bg-blue-600
+            text-white
+            px-5
+            py-3
+            rounded-xl
+            "
+          >
+            Guardar
+          </button>
+
+          {order.status ===
+            "PENDING" && (
+            <button
+              onClick={
+                deleteOrder
+              }
+              className="
+              bg-red-600
+              text-white
+              px-5
+              py-3
+              rounded-xl
+              "
+            >
+              Eliminar
+            </button>
+          )}
+
+        </div>
+
+      </div>
+
+    </main>
+  );
+}
