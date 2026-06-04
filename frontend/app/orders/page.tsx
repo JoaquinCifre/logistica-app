@@ -189,9 +189,9 @@ mx-auto
 )}
 <div
   className="
-  grid
-  grid-cols-1 lg:grid-cols-5
-  gap-6
+  flex
+flex-col
+gap-4
   "
 >
       
@@ -227,10 +227,11 @@ mx-auto
           }
         className="
     w-full
-    max-w-[1000px]
+max-w-[900px]
 mx-auto
     lg:col-span-2
     border
+    mt-10
     border-slate-300
     rounded-xl
     px-4
@@ -430,10 +431,11 @@ mb-4
       setSearch(e.target.value)
     }
     className="
-    max-w-[1000px]
-mx-auto
     w-full
+max-w-[900px]
+mx-auto
     mt-3
+    mb-8
     border
     border-slate-300
     rounded-xl
@@ -552,6 +554,7 @@ return (
 bg-slate-50
 hover:bg-white
 border
+w-full
 border-slate-200
 rounded-2xl
 p-5
