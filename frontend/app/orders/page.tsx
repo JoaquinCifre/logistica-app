@@ -211,12 +211,12 @@ gap-4
   className="
   text-2xl
   font-semibold
-  mb-3
+  
   "
 >
   Nuevo Pedido
 </h2>
-<div className="relative mb-4">
+<div className="relative mb-4 mt-10">
         <select 
           value={form.clientId}
           onChange={(e) =>
@@ -231,7 +231,7 @@ max-w-[900px]
 mx-auto
     lg:col-span-2
     border
-    mt-10
+    
     border-slate-300
     rounded-xl
     px-4
@@ -254,17 +254,17 @@ mx-auto
         </select>
   
 
-  <ChevronDown
-    size={18}
-    className="
-    absolute
-    right-3
-    top-1/2
-    -translate-y-1/2
-    pointer-events-none
-    text-slate-400
-    "
-  />
+ <ChevronDown
+  size={18}
+  className="
+  absolute
+  right-4
+  top-1/2
+  -translate-y-1/2
+  pointer-events-none
+  text-slate-500
+  "
+/>
 
 </div>
    <div className="relative mb-4">
@@ -432,8 +432,7 @@ mb-4
     }
     className="
     w-full
-max-w-[900px]
-mx-auto
+
     mt-3
     mb-3
     border
@@ -444,17 +443,18 @@ mx-auto
     "
   />
 
-  <button
-    className="
-    absolute
-    left-3
-    top-1/2
-    -translate-y-1/2
-    text-slate-400
-    "
-  >
-    <Search size={18} />
-  </button>
+ <button
+  className="
+  absolute
+  right-3
+  top-1/2
+  -translate-y-1/2
+  text-slate-400
+  pointer-events-none
+  "
+>
+  <Search size={18} />
+</button>
 
 </div>
 <input className="
