@@ -220,7 +220,215 @@ text-slate-800
     onChange={(e) => setSearch(e.target.value)}
   />
 </div>
+
 <div
+  className="
+  xl:col-span-2
+  bg-white
+  rounded-2xl
+  border
+  border-slate-200
+  shadow-sm
+  p-6
+  "
+>
+  
+
+
+
+{clients
+  .filter((client) =>
+    (client.name ?? "")
+  .toLowerCase()
+  .includes(search.toLowerCase()) ||
+
+(client.address ?? "")
+  .toLowerCase()
+  .includes(search.toLowerCase()) ||
+
+(client.phone ?? "")
+  .toLowerCase()
+  .includes(search.toLowerCase()) ||
+
+(client.contactName ?? "")
+  .toLowerCase()
+  .includes(search.toLowerCase()) ||
+
+(client.notes ?? "")
+  .toLowerCase()
+  .includes(search.toLowerCase())
+  )
+  .map((client) => (
+    <div
+      key={client.id}
+      className="
+      
+bg-slate-50
+hover:bg-white
+border
+border-slate-200
+rounded-2xl
+
+p-3
+mb-4
+shadow-sm
+hover:shadow-md
+transition-all
+duration-200
+"
+    >
+      <div
+  onClick={() =>
+    setExpandedClient(
+      expandedClient === client.id
+        ? null
+        : client.id
+    )
+  }
+  className="
+  flex
+  items-center
+  gap-3
+  cursor-pointer
+  font-semibold
+  text-lg
+  "
+>
+  {expandedClient === client.id ? (
+    <ChevronDown size={18} />
+  ) : (
+    <ChevronRight size={18} />
+  )}
+
+  <div>
+
+  <div
+    className="
+    font-semibold
+    text-lg
+    "
+  >
+    {client.name}
+  </div>
+
+  <div
+    className="
+    text-sm
+    text-slate-500
+    "
+  >
+    {client.address}
+  </div>
+
+</div>
+</div>
+ {expandedClient === client.id && (
+
+    <div className="
+mt-4
+pt-4
+border-t
+border-slate-200
+">
+
+      
+
+      <div className="
+flex
+items-center
+gap-2
+text-slate-700
+mt-2
+">
+  <Phone size={16} />
+  {client.phone}
+</div>
+{client.schedule && (
+  <div className="
+flex
+items-center
+gap-2
+text-slate-700
+mt-2
+">
+  <Clock3 size={16} />
+  {client.schedule}
+</div>
+)}
+
+{client.contactName && (
+  <div className="
+flex
+items-center
+gap-2
+text-slate-700
+mt-2
+">
+  <User size={16} />
+  {client.contactName}
+</div>
+)}
+
+{client.deliveryInstructions && (
+  <div className="
+flex
+items-center
+gap-2
+text-slate-700
+mt-2
+">
+  <Package size={16} />
+  {client.deliveryInstructions}
+</div>
+)}
+
+{client.notes && (
+  <div className="
+flex
+items-center
+gap-2
+text-slate-700
+mt-2
+">
+  <FileText size={16} />
+  {client.notes}
+</div>
+)}
+      
+
+      <button
+        onClick={() =>
+          window.location.href =
+            `/clients/${client.id}`
+        }
+        className="
+mt-4
+bg-blue-600
+hover:bg-blue-700
+text-white
+px-4
+py-2
+rounded-xl
+font-medium
+transition-all
+"
+      >
+        Editar
+      </button>
+
+    </div>
+
+  )}
+
+</div>
+
+      
+   
+
+    
+  ))}</div></div>
+
+  <div
   className="
   bg-white
   rounded-2xl
@@ -438,212 +646,6 @@ text-slate-800
       </div>
 
       </div>
-<div
-  className="
-  xl:col-span-2
-  bg-white
-  rounded-2xl
-  border
-  border-slate-200
-  shadow-sm
-  p-6
-  "
->
-  
-
-
-
-{clients
-  .filter((client) =>
-    (client.name ?? "")
-  .toLowerCase()
-  .includes(search.toLowerCase()) ||
-
-(client.address ?? "")
-  .toLowerCase()
-  .includes(search.toLowerCase()) ||
-
-(client.phone ?? "")
-  .toLowerCase()
-  .includes(search.toLowerCase()) ||
-
-(client.contactName ?? "")
-  .toLowerCase()
-  .includes(search.toLowerCase()) ||
-
-(client.notes ?? "")
-  .toLowerCase()
-  .includes(search.toLowerCase())
-  )
-  .map((client) => (
-    <div
-      key={client.id}
-      className="
-      
-bg-slate-50
-hover:bg-white
-border
-border-slate-200
-rounded-2xl
-
-p-3
-mb-4
-shadow-sm
-hover:shadow-md
-transition-all
-duration-200
-"
-    >
-      <div
-  onClick={() =>
-    setExpandedClient(
-      expandedClient === client.id
-        ? null
-        : client.id
-    )
-  }
-  className="
-  flex
-  items-center
-  gap-3
-  cursor-pointer
-  font-semibold
-  text-lg
-  "
->
-  {expandedClient === client.id ? (
-    <ChevronDown size={18} />
-  ) : (
-    <ChevronRight size={18} />
-  )}
-
-  <div>
-
-  <div
-    className="
-    font-semibold
-    text-lg
-    "
-  >
-    {client.name}
-  </div>
-
-  <div
-    className="
-    text-sm
-    text-slate-500
-    "
-  >
-    {client.address}
-  </div>
-
-</div>
-</div>
- {expandedClient === client.id && (
-
-    <div className="
-mt-4
-pt-4
-border-t
-border-slate-200
-">
-
-      
-
-      <div className="
-flex
-items-center
-gap-2
-text-slate-700
-mt-2
-">
-  <Phone size={16} />
-  {client.phone}
-</div>
-{client.schedule && (
-  <div className="
-flex
-items-center
-gap-2
-text-slate-700
-mt-2
-">
-  <Clock3 size={16} />
-  {client.schedule}
-</div>
-)}
-
-{client.contactName && (
-  <div className="
-flex
-items-center
-gap-2
-text-slate-700
-mt-2
-">
-  <User size={16} />
-  {client.contactName}
-</div>
-)}
-
-{client.deliveryInstructions && (
-  <div className="
-flex
-items-center
-gap-2
-text-slate-700
-mt-2
-">
-  <Package size={16} />
-  {client.deliveryInstructions}
-</div>
-)}
-
-{client.notes && (
-  <div className="
-flex
-items-center
-gap-2
-text-slate-700
-mt-2
-">
-  <FileText size={16} />
-  {client.notes}
-</div>
-)}
-      
-
-      <button
-        onClick={() =>
-          window.location.href =
-            `/clients/${client.id}`
-        }
-        className="
-mt-4
-bg-blue-600
-hover:bg-blue-700
-text-white
-px-4
-py-2
-rounded-xl
-font-medium
-transition-all
-"
-      >
-        Editar
-      </button>
-
-    </div>
-
-  )}
-
-</div>
-
-      
-   
-
-    
-  ))}</div></div>
     </main>
   );
 }
