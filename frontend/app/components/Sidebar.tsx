@@ -41,7 +41,7 @@ export default function Sidebar() {
     background:
       "linear-gradient(180deg,#0F172A 0%,#111827 100%)",
     color: "white",
-    padding: "24px",
+    padding: window.innerWidth < 768 ? "12px" : "24px",
   }}
 >
     <div
@@ -66,13 +66,12 @@ export default function Sidebar() {
   </span>
 </div>
 
-    <div
+  <div
   className="
   flex
-  flex-row
+  flex-wrap
   md:flex-col
   gap-2
-  overflow-x-auto
   "
 >
       {links.map((link) => {
@@ -84,16 +83,17 @@ export default function Sidebar() {
       key={link.href}
       href={link.href}
       style={{
-        padding: "12px 16px",
-        borderRadius: "10px",
-        textDecoration: "none",
-        color: "white",
-        background:
-          pathname === link.href
-            ? "#2563EB"
-            : "transparent",
-        transition: "0.2s",
-      }}
+  padding: "10px 14px",
+  borderRadius: "10px",
+  textDecoration: "none",
+  color: "white",
+  background:
+    pathname === link.href
+      ? "#2563EB"
+      : "transparent",
+  transition: "0.2s",
+  whiteSpace: "nowrap",
+}}
     >
       <div
         style={{
