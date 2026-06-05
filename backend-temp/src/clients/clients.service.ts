@@ -66,6 +66,58 @@ async update(
   id: number,
   clientData: Partial<Client>,
 ) {
+
+  const client =
+    await this.findOne(id);
+
+  if (
+    clientData.address &&
+    clientData.address !==
+      client.address
+  ) {
+
+    try {
+
+      const response =
+        await axios.get(
+          'https://nominatim.openstreetmap.org/search',
+          {
+            params: {
+              q: `${clientData.address}, Buenos Aires, Argentina`,
+              format: 'json',
+              limit: 1,
+            },
+            headers: {
+              'User-Agent':
+                'logistica-app',
+            },
+          },
+        );
+
+      if (
+        response.data.length > 0
+      ) {
+
+        clientData.latitude =
+          parseFloat(
+            response.data[0].lat
+          );
+
+        clientData.longitude =
+          parseFloat(
+            response.data[0].lon
+          );
+      }
+
+    } catch (error) {
+
+      console.error(
+        'Error geocoding address',
+        error,
+      );
+    }
+  }
+
   await this.clientsRepository.update(
     id,
     clientData,
@@ -73,6 +125,7 @@ async update(
 
   return this.findOne(id);
 }
+
 async remove(id: number) {
   await this.clientsRepository.delete(id);
 
