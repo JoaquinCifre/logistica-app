@@ -87,21 +87,28 @@ export default function Sidebar() {
 
   return (
     <Link
-      key={link.href}
-      href={link.href}
-      style={{
-  padding: "10px 14px",
-  borderRadius: "10px",
-  textDecoration: "none",
-  color: "white",
-  background:
-    pathname === link.href
-      ? "#2563EB"
-      : "transparent",
-  transition: "0.2s",
-  whiteSpace: "nowrap",
-}}
-    >
+  key={link.href}
+  href={link.href}
+  className={`
+    px-4
+    py-3
+    rounded-xl
+    text-white
+    whitespace-nowrap
+    transition-all
+    duration-200
+
+    ${
+      pathname === link.href
+        ? "bg-blue-600 shadow-md"
+        : ""
+    }
+
+    md:mx-3
+    md:hover:bg-slate-700
+    md:hover:translate-x-1
+  `}
+>
       <div
         style={{
           display: "flex",

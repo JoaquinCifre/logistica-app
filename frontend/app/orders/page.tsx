@@ -408,8 +408,13 @@ mb-4
   onClick={createOrder}
   className="
   w-full
-  bg-blue-600
-  hover:bg-blue-700
+  bg-indigo-600
+hover:bg-indigo-700
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
   text-white
   py-3
   rounded-xl
@@ -665,11 +670,17 @@ duration-200
     className="
     mt-4
     bg-blue-600
-    hover:bg-blue-700
-    text-white
-    px-4
-    py-2
-    rounded-xl
+hover:bg-blue-700
+text-white
+px-5
+py-3
+rounded-xl
+font-semibold
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
     "
   >
     Editar

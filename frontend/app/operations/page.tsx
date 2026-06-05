@@ -360,6 +360,10 @@ mt-6
   gap-2
   bg-green-600
   hover:bg-green-700
+  shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+duration-200
   text-white
   rounded-xl
   px-4
@@ -386,6 +390,10 @@ mt-6
   hover:bg-slate-900
   text-white
   rounded-xl
+  shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+duration-200
   px-4
   py-3
   font-semibold
@@ -425,8 +433,13 @@ mt-6
   }}
   className="
 flex-1
-bg-blue-600
-hover:bg-blue-700
+bg-emerald-600
+hover:bg-emerald-700
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
 text-white
 rounded-xl
 p-4
@@ -455,8 +468,13 @@ font-semibold
   }}
   className="
 flex-1
-bg-slate-700
-hover:bg-slate-800
+bg-rose-600
+hover:bg-rose-700
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
 text-white
 rounded-xl
 p-4

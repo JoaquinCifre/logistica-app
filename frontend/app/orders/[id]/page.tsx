@@ -125,12 +125,20 @@ export default function OrderPage({
             "/orders"
         }
         className="
-        mb-6
-        px-4
-        py-2
-        border
-        border-slate-300
-        rounded-xl
+       mb-6
+px-4
+py-3
+border
+border-slate-300
+rounded-xl
+bg-white
+hover:bg-slate-50
+text-slate-700
+font-semibold
+transition-all
+duration-200
+shadow-sm
+hover:shadow-md
         "
       >
         ← Volver
@@ -313,11 +321,18 @@ export default function OrderPage({
               saveOrder
             }
             className="
-            bg-blue-600
-            text-white
-            px-5
-            py-3
-            rounded-xl
+            bg-indigo-600
+hover:bg-indigo-700
+text-white
+px-5
+py-3
+rounded-xl
+font-semibold
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
             "
           >
             Guardar
@@ -330,11 +345,18 @@ export default function OrderPage({
                 deleteOrder
               }
               className="
-              bg-red-600
-              text-white
-              px-5
-              py-3
-              rounded-xl
+             bg-rose-600
+hover:bg-rose-700
+text-white
+px-5
+py-3
+rounded-xl
+font-semibold
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
               "
             >
               Eliminar

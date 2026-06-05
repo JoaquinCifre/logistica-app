@@ -149,16 +149,21 @@ setTimeout(() => {
     window.location.href = "/"
   }
  className="
-  px-4
-  bg-blue-500
-  hover:bg-blue-600
-  text-white
-  py-3
-  mb-6
-  rounded-xl
-  font-semibold
-  transition-all
-  "
+px-4
+py-3
+mb-6
+rounded-xl
+font-semibold
+border
+border-slate-300
+bg-white
+hover:bg-slate-50
+text-slate-700
+transition-all
+duration-200
+shadow-sm
+hover:shadow-md
+"
 >
   ← Volver
 </button>
@@ -375,14 +380,40 @@ mb-5
 
   <button
   onClick={saveClient}
-  className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+  className="
+bg-indigo-600
+hover:bg-indigo-700
+text-white
+px-5
+py-3
+rounded-xl
+font-semibold
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
+"
 >
   Guardar
 </button>
 
   <button
   onClick={deleteClient}
-  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+  className="
+bg-rose-600
+hover:bg-rose-700
+text-white
+px-5
+py-3
+rounded-xl
+font-semibold
+shadow-sm
+hover:shadow-md
+hover:-translate-y-0.5
+transition-all
+duration-200
+"
 >
   Desactivar
 </button>
