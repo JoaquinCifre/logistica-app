@@ -20,6 +20,11 @@ interface Order {
 }
 
 export default function OrdersPage() {
+  const [showClients, setShowClients] =
+  useState(false);
+
+const [clientSearch, setClientSearch] =
+  useState("");
   const [clients, setClients] = useState<Client[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
   const [search, setSearch] =
@@ -218,50 +223,136 @@ mx-auto
   Nuevo Pedido
 </h2>
 <div className="relative mb-4 mt-10">
-        <select 
-          value={form.clientId}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              clientId: e.target.value,
-            })
-          }
-        className="
-w-full
-border
-border-slate-300
-rounded-xl
-px-4
-py-3
-appearance-none
-bg-white
-">
-          <option value="">
-            Seleccionar cliente
-          </option>
+       <div className="relative mb-6">
 
-          {clients.map((client) => (
-            <option
-              key={client.id}
-              value={client.id}
+  <button
+    type="button"
+    onClick={() =>
+      setShowClients(
+        !showClients
+      )
+    }
+    className="
+    w-full
+    bg-white
+    border
+    border-slate-200
+    rounded-xl
+    p-4
+    shadow-sm
+    flex
+    items-center
+    justify-between
+    hover:shadow-md
+    transition-all
+    "
+  >
+    <span>
+
+      {form.clientId
+        ? clients.find(
+            c =>
+              c.id ===
+              Number(
+                form.clientId
+              )
+          )?.name
+        : "Seleccionar cliente"}
+
+    </span>
+
+    <ChevronDown size={18} />
+  </button>
+
+  {showClients && (
+
+    <div
+      className="
+      mt-2
+      bg-white
+      border
+      border-slate-200
+      rounded-2xl
+      shadow-lg
+      max-h-80
+      overflow-auto
+      "
+    >
+
+      <input
+        placeholder="Buscar cliente..."
+        value={clientSearch}
+        onChange={(e) =>
+          setClientSearch(
+            e.target.value
+          )
+        }
+        className="
+        w-full
+        p-3
+        border-b
+        border-slate-200
+        outline-none
+        "
+      />
+
+      {clients
+        .filter(client =>
+          client.name
+            .toLowerCase()
+            .includes(
+              clientSearch.toLowerCase()
+            )
+        )
+        .map(client => (
+
+          <div
+            key={client.id}
+            onClick={() => {
+
+              setForm({
+                ...form,
+                clientId:
+                  String(
+                    client.id
+                  ),
+              });
+
+              setShowClients(
+                false
+              );
+
+              setClientSearch(
+                ""
+              );
+            }}
+            className="
+            p-4
+            border-b
+            border-slate-100
+            hover:bg-slate-50
+            cursor-pointer
+            transition-all
+            "
+          >
+
+            <div
+              className="
+              font-semibold
+              "
             >
               {client.name}
-            </option>
-          ))}
-        </select>
-  
+            </div>
 
- <ChevronDown
-  size={18}
-  className="
-  absolute
-  right-4
-  top-1/2
-  -translate-y-1/2
-  pointer-events-none
-  text-slate-500
-  "
-/>
+          </div>
+
+        ))}
+
+    </div>
+
+  )}
+
+</div>
 
 </div>
    <div className="relative mb-4">
@@ -275,15 +366,21 @@ bg-white
     })
   }
 className="
-    w-full
-    border
-    border-slate-300
-    rounded-xl
-    px-4
-    py-3
-    appearance-none
-    bg-white
-    ">
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
+">
   <option value="NORMAL">
     Normal
   </option>
@@ -323,10 +420,18 @@ className="
         <input className="
 w-full
 border
-border-slate-300
+border-slate-200
+bg-white
 rounded-xl
-p-3
-mb-4
+px-4
+py-3
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
 "
           type="date"
           value={form.date}
@@ -350,15 +455,21 @@ mb-4
             })
           }
         className="
-    w-full
-    border
-    border-slate-300
-    rounded-xl
-    px-4
-    py-3
-    appearance-none
-    bg-white
-    ">
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
+">
           <option value="MORNING">
             Mañana
           </option>
@@ -443,16 +554,21 @@ duration-200
       setSearch(e.target.value)
     }
     className="
-    w-full
-
-    mt-3
-    mb-3
-    border
-    border-slate-300
-    rounded-xl
-    p-3
-    pr-12
-    "
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
+"
   />
 
  <button
@@ -483,12 +599,18 @@ duration-200
 <input className="
 w-full
 border
-border-slate-300
+border-slate-200
+bg-white
 rounded-xl
-p-3
-max-w-[1000px]
-mx-auto
-mb-4
+px-4
+py-3
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
 "
   type="date"
   value={filterDate}
