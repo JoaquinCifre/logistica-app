@@ -430,6 +430,7 @@ rounded-xl
 text-slate-500
 px-4
 py-3
+mb-4
 shadow-sm
 transition-all
 duration-200
@@ -573,6 +574,7 @@ border
 border-slate-200
 bg-white
 rounded-xl
+text-slate-500
 px-4
 py-3
 shadow-sm
@@ -743,7 +745,13 @@ duration-200
 
           <div className="flex items-center gap-2 mt-2">
   <Clock3 size={16} />
-  {order.shift}
+  {
+  order.shift === "MORNING"
+    ? "Mañana"
+    : order.shift === "AFTERNOON"
+    ? "Tarde"
+    : order.shift
+}
 </div>
 
         {order.status === "COMPLETED" ? (
