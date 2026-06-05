@@ -273,7 +273,7 @@ text-slate-800
 bg-slate-50
 hover:bg-white
 border
-mt-10
+mt-4
 border-slate-200
 rounded-2xl
 
