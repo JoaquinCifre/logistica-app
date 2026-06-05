@@ -43,7 +43,7 @@ const [messageType, setMessageType] =
   const [form, setForm] = useState({
     clientId: "",
     date: "",
-    shift: "MORNING",
+    shift: "",
     notes: "",
     priority: "NORMAL",
   });
@@ -367,12 +367,15 @@ mx-auto
   }
 className="
 w-full
+appearance-none
+bg-white
 border
 border-slate-200
 bg-white
 rounded-xl
 px-4
 py-3
+text-slate-500
 shadow-sm
 transition-all
 duration-200
@@ -444,7 +447,7 @@ outline-none
         />
 
      
-<div className="relative mb-4">
+<div className="relative mb-4 mt-4">
         <select 
 
           value={form.shift}
@@ -455,6 +458,7 @@ outline-none
             })
           }
         className="
+        text-slate-500
 w-full
 border
 border-slate-200
@@ -462,6 +466,9 @@ bg-white
 rounded-xl
 px-4
 py-3
+appearance-none
+bg-white
+text-slate-500
 shadow-sm
 transition-all
 duration-200
@@ -470,6 +477,9 @@ focus:ring-blue-500
 focus:border-blue-500
 outline-none
 ">
+  <option value="">
+  Seleccionar turno
+</option>
           <option value="MORNING">
             Mañana
           </option>
