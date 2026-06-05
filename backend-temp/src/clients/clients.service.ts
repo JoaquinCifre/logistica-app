@@ -70,11 +70,9 @@ async update(
   const client =
     await this.findOne(id);
 
-  if (
-    clientData.address &&
-    clientData.address !==
-      client.address
-  ) {
+  if (clientData.address)
+      
+   {
 
     try {
 
@@ -108,6 +106,8 @@ async update(
             response.data[0].lon
           );
       }
+      console.log('NUEVAS COORDENADAS:', clientData.latitude,
+      clientData.longitude);
 
     } catch (error) {
 
