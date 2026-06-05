@@ -109,6 +109,9 @@ p-8
   mt-3
   text-slate-500
   text-lg
+  flex
+  items-center
+  justify-center
   "
 >
   No quedan entregas pendientes para hoy.
