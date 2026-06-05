@@ -55,6 +55,9 @@ export class ClientsService {
     where: {
       active: true,
     },
+    order: {
+      name: 'ASC',
+    },
   });
 }
   findOne(id: number) {
