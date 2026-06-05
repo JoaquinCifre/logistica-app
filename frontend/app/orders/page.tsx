@@ -54,7 +54,7 @@ const [messageType, setMessageType] =
     );
 
     setClients(
-  [...response.data].reverse()
+  [...response.data]
 );
   };
 
