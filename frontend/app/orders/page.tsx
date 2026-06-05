@@ -239,6 +239,7 @@ mx-auto
     border-slate-200
     rounded-xl
     p-4
+    text-slate-500
     shadow-sm
     flex
     items-center
@@ -426,6 +427,7 @@ border
 border-slate-200
 bg-white
 rounded-xl
+text-slate-500
 px-4
 py-3
 shadow-sm
@@ -447,7 +449,7 @@ outline-none
         />
 
      
-<div className="relative mb-4 mt-4">
+<div className="relative mb-4 ">
         <select 
 
           value={form.shift}
@@ -466,6 +468,8 @@ bg-white
 rounded-xl
 px-4
 py-3
+mt-4
+mb-4
 appearance-none
 bg-white
 text-slate-500
