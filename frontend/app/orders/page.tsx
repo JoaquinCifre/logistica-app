@@ -187,13 +187,14 @@ mx-auto
   </div>
 
 )}
-<div
-  className="
-  flex
-flex-col
-gap-4
-  "
->
+<div className="
+  grid
+  grid-cols-1
+  w-full
+  max-w-[900px]
+  mx-auto
+  gap-6
+">
       
 
       <div
