@@ -18,7 +18,7 @@ export class ClientsService {
         'https://nominatim.openstreetmap.org/search',
         {
           params: {
-            q: clientData.address,
+            q: `${clientData.address}, Buenos Aires, Argentina`,
             format: 'json',
             limit: 1,
           },
