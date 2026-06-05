@@ -13,7 +13,8 @@ import {
   MapPin,
   Phone,
   Navigation,
-  Clock3
+  Clock3,
+  CheckCircle2
 } from "lucide-react";
 const MapView = dynamic(
   () => import("../components/OperationsMap"),
@@ -74,25 +75,44 @@ p-8
   "
 >
 
-  <div className="text-3xl">
-    ✅
-  </div>
+  <div
+  className="
+  w-20
+  h-20
+  rounded-full
+  bg-green-100
+  flex
+  items-center
+  justify-center
+  "
+>
+  <CheckCircle2
+    size={48}
+    className="text-green-600"
+  />
+</div>
 
   <div
-    className="
-    text-4xl
-    font-bold
-    tracking-tight
-    "
-  >
-    Recorrido finalizado
-  </div>
+  className="
+  text-3xl
+  font-bold
+  text-slate-900
+  "
+>
+  Recorrido finalizado
+</div>
 
 </div>
 
-  <div className="mt-2 text-2xl flex justify-center">
-    No quedan entregas pendientes.
-  </div>
+  <div
+  className="
+  mt-3
+  text-slate-500
+  text-lg
+  "
+>
+  No quedan entregas pendientes para hoy.
+</div>
 
 </div>
       </main>

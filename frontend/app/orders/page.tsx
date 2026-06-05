@@ -226,19 +226,15 @@ gap-4
             })
           }
         className="
-    w-full
-max-w-[900px]
-mx-auto
-    lg:col-span-2
-    border
-    
-    border-slate-300
-    rounded-xl
-    px-4
-    py-3
-    appearance-none
-    bg-white
-    ">
+w-full
+border
+border-slate-300
+rounded-xl
+px-4
+py-3
+appearance-none
+bg-white
+">
           <option value="">
             Seleccionar cliente
           </option>
