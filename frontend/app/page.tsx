@@ -206,7 +206,8 @@ gap-3
 cursor-pointer
 font-semibold
 text-2xl
-
+mb-10
+mt-4
 text-slate-800
 "
 >
