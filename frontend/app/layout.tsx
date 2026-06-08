@@ -55,6 +55,7 @@ export default function RootLayout({
   md:p-8
   mt-6
   md:mt-0
+  md:mb-4
   overflow-y-auto
   "
 >
