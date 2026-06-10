@@ -424,6 +424,7 @@ text-slate-500
 px-4
 py-3
 mb-4
+mt-4
 shadow-sm
 transition-all
 duration-200
@@ -612,6 +613,7 @@ outline-none
 
 <input className="
 w-full
+text-slate-500
 border
 border-slate-200
 bg-white
