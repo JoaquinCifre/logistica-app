@@ -359,7 +359,9 @@ mx-auto
    <div className="relative mb-4">
 
 <select 
+
   value={form.priority}
+
   onChange={(e) =>
     setForm({
       ...form,
@@ -384,6 +386,7 @@ focus:ring-2
 focus:ring-blue-500
 focus:border-blue-500
 outline-none
+
 ">
   <option value="NORMAL">
     Normal
@@ -410,17 +413,7 @@ outline-none
   />
 
 </div>
-<label
-  className="
-  block
-  text-sm
-  font-medium
-  text-slate-700
-  mb-2
-  "
->
-  Fecha
-</label>
+
         <input className="
 w-full
 border
@@ -438,8 +431,10 @@ focus:ring-2
 focus:ring-blue-500
 focus:border-blue-500
 outline-none
+appearance-none
 "
           type="date"
+          placeholder="Fecha"
           value={form.date}
           onChange={(e) =>
             setForm({
@@ -511,10 +506,21 @@ outline-none
         <input className="
 w-full
 border
-border-slate-300
+border-slate-200
+bg-white
 rounded-xl
-p-3
+text-slate-500
+px-4
+py-3
 mb-4
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
+appearance-none
 "
           placeholder="Observaciones"
           value={form.notes}
@@ -531,8 +537,8 @@ mb-4
   onClick={createOrder}
   className="
   w-full
-  bg-indigo-600
-hover:bg-indigo-700
+  bg-blue-600
+  hover:bg-blue-700
 shadow-sm
 hover:shadow-md
 hover:-translate-y-0.5
@@ -541,6 +547,7 @@ duration-200
   text-white
   py-3
   rounded-xl
+  mt-6
   font-semibold
   "
 >
@@ -571,6 +578,7 @@ duration-200
     className="
 w-full
 border
+mt-2
 border-slate-200
 bg-white
 rounded-xl
@@ -601,17 +609,7 @@ outline-none
 </button>
 
 </div>
-<label
-  className="
-  block
-  text-sm
-  font-medium
-  text-slate-700
-  mb-2
-  "
->
-  Fecha
-</label>
+
 <input className="
 w-full
 border
@@ -627,7 +625,9 @@ focus:ring-2
 focus:ring-blue-500
 focus:border-blue-500
 outline-none
+appearance-none
 "
+placeholder="Fecha"
   type="date"
   value={filterDate}
   onChange={(e) =>

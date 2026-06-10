@@ -27,20 +27,33 @@ export default function OperationsPage() {
   const [route, setRoute] =
     useState<any[]>([]);
 
-    
+    const [selectedShift, setSelectedShift] =
+  useState("MORNING");
+
+const [selectedDate, setSelectedDate] =
+  useState(
+    new Date()
+      .toISOString()
+      .split("T")[0]
+  );
 
   const loadRoute = async () => {
-    const response =
-      await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/orders/optimize`
-      );
+  const response =
+    await axios.get(
+      `${process.env.NEXT_PUBLIC_API_URL}/orders/optimize/${selectedDate}/${selectedShift}`
+    );
 
-    setRoute(response.data);
-  };
+  setRoute(
+    response.data.route
+  );
+};
 
   useEffect(() => {
-    loadRoute();
-  }, []);
+  loadRoute();
+}, [
+  selectedDate,
+  selectedShift,
+]);
 
   if (!route.length) {
     return (
@@ -165,7 +178,60 @@ p-8
   <Truck size={28} />
   <span>Operaciones</span>
 </h1>
+<div
+  className="
+  flex
+  flex-col
+  md:flex-row
+  gap-3
+  mt-6
+  "
+>
 
+  <input
+    type="date"
+    value={selectedDate}
+    onChange={(e) =>
+      setSelectedDate(
+        e.target.value
+      )
+    }
+    className="
+    border
+    border-slate-200
+    rounded-xl
+    px-4
+    py-3
+    bg-white
+    "
+  />
+
+  <select
+    value={selectedShift}
+    onChange={(e) =>
+      setSelectedShift(
+        e.target.value
+      )
+    }
+    className="
+    border
+    border-slate-200
+    rounded-xl
+    px-4
+    py-3
+    bg-white
+    "
+  >
+    <option value="MORNING">
+      Mañana
+    </option>
+
+    <option value="AFTERNOON">
+      Tarde
+    </option>
+  </select>
+
+</div>
       <div
   className="mt-6">
   <MapView order={order} />

@@ -20,7 +20,69 @@ function distance(
       Math.pow(lon2 - lon1, 2),
   );
 }
+function optimizeNearestNeighbor(
+  orders: Order[],
+) {
+  const route: Order[] = [];
 
+  let currentLatitude =
+    DEPOT.latitude;
+
+  let currentLongitude =
+    DEPOT.longitude;
+
+  const remaining = [...orders];
+
+  while (
+    remaining.length > 0
+  ) {
+    let nearestIndex = 0;
+
+    let nearestDistance =
+      Number.MAX_VALUE;
+
+    for (
+      let i = 0;
+      i < remaining.length;
+      i++
+    ) {
+      const order =
+        remaining[i];
+
+      const d = distance(
+        currentLatitude,
+        currentLongitude,
+        order.client.latitude,
+        order.client.longitude,
+      );
+
+      if (
+        d < nearestDistance
+      ) {
+        nearestDistance = d;
+        nearestIndex = i;
+      }
+    }
+
+    const nextOrder =
+      remaining.splice(
+        nearestIndex,
+        1,
+      )[0];
+
+    route.push(
+      nextOrder,
+    );
+
+    currentLatitude =
+      nextOrder.client.latitude;
+
+    currentLongitude =
+      nextOrder.client.longitude;
+  }
+
+  return route;
+}
 @Injectable()
 export class OrdersService {
   constructor(
@@ -98,49 +160,59 @@ async history() {
 
   return grouped;
 }
-  async optimizeRoute() {
-  const orders = await this.ordersRepository.find({
-    relations: {
-      client: true,
-    },
-  });
+ async optimizeRoute() {
+  const orders =
+    await this.ordersRepository.find({
+      relations: {
+        client: true,
+      },
+    });
 
-  const validOrders = orders.filter(
-  (order) =>
-    order.status === 'PENDING' &&
-    order.client?.latitude &&
-    order.client?.longitude,
-);
-
-  const priorityValue = (
-    priority: string,
-  ) => {
-    switch (priority) {
-      case 'URGENT':
-        return 3;
-      case 'IMPORTANT':
-        return 2;
-      default:
-        return 1;
-    }
-  };
-
-  validOrders.sort((a, b) => {
-    const priorityDiff =
-      priorityValue(b.priority) -
-      priorityValue(a.priority);
-
-    if (priorityDiff !== 0) {
-      return priorityDiff;
-    }
-
-    return (
-      a.client.latitude -
-      b.client.latitude
+  const validOrders =
+    orders.filter(
+      (order) =>
+        order.status ===
+          "PENDING" &&
+        order.client
+          ?.latitude !=
+          null &&
+        order.client
+          ?.longitude !=
+          null,
     );
-  });
 
-  return validOrders;
+  const urgent =
+    validOrders.filter(
+      (o) =>
+        o.priority ===
+        "URGENT",
+    );
+
+  const important =
+    validOrders.filter(
+      (o) =>
+        o.priority ===
+        "IMPORTANT",
+    );
+
+  const normal =
+    validOrders.filter(
+      (o) =>
+        o.priority ===
+        "NORMAL",
+    );
+
+  return [
+    ...optimizeNearestNeighbor(
+      urgent,
+    ),
+    ...optimizeNearestNeighbor(
+      important,
+    ),
+    ...optimizeNearestNeighbor(
+      normal,
+    ),
+  ];
 }
 
 async findByDate(date: string) {
@@ -238,6 +310,30 @@ await this.ordersRepository.update(
       },
     });
 
+    const priorityValue = (
+  priority: string,
+) => {
+  switch (priority) {
+    case "URGENT":
+      return 3;
+
+    case "IMPORTANT":
+      return 2;
+
+    default:
+      return 1;
+  }
+};
+
+orders.sort(
+  (a, b) =>
+    priorityValue(
+      b.priority
+    ) -
+    priorityValue(
+      a.priority
+    )
+);
   const validOrders = orders;
 
   const route: Order[] = [];
