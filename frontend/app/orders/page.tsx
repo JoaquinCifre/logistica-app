@@ -668,11 +668,11 @@ duration-200
   p-6
   "
 >
-      <h2>className="
+      <h2 className="
   text-2xl
-  font-semibold
+  font-semibold">
   
-  "Pedidos</h2>
+  "Pedidos"</h2>
 <div className="relative mt-6 mb-4">
 
   <input
@@ -685,6 +685,7 @@ duration-200
 w-full
 border
 mt-2
+mb-2
 border-slate-200
 bg-white
 rounded-xl

@@ -573,9 +573,7 @@ text-slate-500
 shadow-sm
 transition-all
 duration-200
-focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+
 outline-none
 
 "
