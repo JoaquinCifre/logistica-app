@@ -97,13 +97,13 @@ export default function Sidebar() {
     whitespace-nowrap
     transition-all
     duration-200
-
+    
     ${
       pathname === link.href
         ? "bg-blue-600 shadow-md"
         : ""
     }
-
+md:mb-4
     md:mx-3
     md:hover:bg-slate-700
     md:hover:translate-x-1
@@ -114,6 +114,7 @@ export default function Sidebar() {
           display: "flex",
           alignItems: "center",
           gap: "10px",
+          
         }}
       >
         <Icon size={18} />
