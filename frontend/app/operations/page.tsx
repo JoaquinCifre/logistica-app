@@ -275,80 +275,123 @@ p-8
         <h2 className="text-2xl font-bold mt-2">
           {order.client.name}
         </h2>
-<div className="mt-2">
-{order.operationType ===
-"PICKUP" ? (
-  <span
-    className="
-    bg-violet-100
-    text-violet-700
-    px-3
-    py-1
-    rounded-full
-    text-sm
-    font-semibold
-    "
-  >
-    Retiro
-  </span>
-) : (
-  <span
-    className="
-    bg-emerald-100
-    text-emerald-700
-    px-3
-    py-1
-    rounded-full
-    text-sm
-    font-semibold
-    "
-  >
-    Entrega
-  </span>
-)}
+<div
+  className="
+  mt-2
+  flex
+  flex-wrap
+  gap-2
+  items-center
+  "
+>
+
+  {order.operations?.map(
+    (op: string) => {
+
+      if (op === "DELIVERY") {
+        return (
+          <span
+            key={op}
+            className="
+            bg-emerald-100
+            text-emerald-700
+            px-3
+            py-1
+            rounded-full
+            text-sm
+            font-semibold
+            "
+          >
+            Entrega
+          </span>
+        );
+      }
+
+      if (op === "PICKUP") {
+        return (
+          <span
+            key={op}
+            className="
+            bg-violet-100
+            text-violet-700
+            px-3
+            py-1
+            rounded-full
+            text-sm
+            font-semibold
+            "
+          >
+            Retiro
+          </span>
+        );
+      }
+
+      if (op === "COLLECTION") {
+        return (
+          <span
+            key={op}
+            className="
+            bg-amber-100
+            text-amber-700
+            px-3
+            py-1
+            rounded-full
+            text-sm
+            font-semibold
+            "
+          >
+            Cobro
+          </span>
+        );
+      }
+
+      return null;
+    }
+  )}
+
   {order.priority === "URGENT" ? (
-  <span
-    className="
-    bg-red-100
-    text-red-700
-    px-3
-    py-1
-    rounded-full
-    text-sm
-    font-semibold
-    "
-  >
-    Urgente
-  </span>
-) : order.priority === "IMPORTANT" ? (
-  <span
-    className="
-    bg-yellow-100
-    text-yellow-700
-    px-3
-    py-1
-    rounded-full
-    text-sm
-    font-semibold
-    "
-  >
-    Importante
-  </span>
-) : (
-  <span
-    className="
-    bg-slate-100
-    text-slate-700
-    px-3
-    py-1
-    rounded-full
-    text-sm
-    font-semibold
-    "
-  >
-    Normal
-  </span>
-)}
+    <span
+      className="
+      bg-red-100
+      text-red-700
+      px-3
+      py-1
+      rounded-full
+      text-sm
+      font-semibold
+      "
+    >
+      Urgente
+    </span>
+  ) : order.priority === "IMPORTANT" ? (
+    <span
+      className="
+      bg-yellow-100
+      text-yellow-700
+      px-3
+      py-1
+      rounded-full
+      text-sm
+      font-semibold
+      "
+    >
+      Importante
+    </span>
+  ) : (
+    <span
+      className="
+      bg-slate-100
+      text-slate-700
+      px-3
+      py-1
+      rounded-full
+      text-sm
+      font-semibold
+      "
+    >
+      Normal
+    </span>
+  )}
 
 </div>
         <div
