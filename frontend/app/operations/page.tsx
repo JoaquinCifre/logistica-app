@@ -136,7 +136,8 @@ p-8
   }
 
   const order = route[0];
-
+console.log("ORDER:", order);
+console.log("OPERATIONS:", order.operations);
  const updateStatus = async (
   status: string
 ) => {
