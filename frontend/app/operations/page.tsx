@@ -276,6 +276,11 @@ console.log("OPERATIONS:", order.operations);
         <h2 className="text-2xl font-bold mt-2">
           {order.client.name}
         </h2>
+        <div>
+  {JSON.stringify(
+    order.operations
+  )}
+</div>
 <div
   className="
   mt-2
