@@ -672,7 +672,7 @@ duration-200
   text-2xl
   font-semibold">
   
-  "Pedidos"</h2>
+  Pedidos</h2>
 <div className="relative mt-6 mb-4">
 
   <input
