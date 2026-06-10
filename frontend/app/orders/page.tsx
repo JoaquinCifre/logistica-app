@@ -269,6 +269,99 @@ mx-auto
 
     <ChevronDown size={18} />
   </button>
+
+  {showClients && (
+
+    <div
+      className="
+      mt-2
+      bg-white
+      border
+      border-slate-200
+      rounded-2xl
+      shadow-lg
+      max-h-80
+      overflow-auto
+      "
+    >
+
+      <input
+        placeholder="Buscar cliente..."
+        value={clientSearch}
+        onChange={(e) =>
+          setClientSearch(
+            e.target.value
+          )
+        }
+        className="
+        w-full
+        p-3
+        border-b
+        border-slate-200
+        outline-none
+        "
+      />
+
+      {clients
+        .filter(client =>
+          client.name
+            .toLowerCase()
+            .includes(
+              clientSearch.toLowerCase()
+            )
+        )
+        .map(client => (
+
+          <div
+            key={client.id}
+            onClick={() => {
+
+              setForm({
+                ...form,
+                clientId:
+                  String(
+                    client.id
+                  ),
+              });
+
+              setShowClients(
+                false
+              );
+
+              setClientSearch(
+                ""
+              );
+            }}
+            className="
+            p-4
+            border-b
+            border-slate-100
+            hover:bg-slate-50
+            cursor-pointer
+            transition-all
+            "
+          >
+
+            <div
+              className="
+              font-semibold
+              "
+            >
+              {client.name}
+            </div>
+
+          </div>
+
+        ))}
+
+    </div>
+
+  )}
+
+</div>
+
+</div>
+
 <div className="mb-6">
 
   <div
@@ -362,97 +455,6 @@ mx-auto
     ))}
 
   </div>
-
-</div>
-  {showClients && (
-
-    <div
-      className="
-      mt-2
-      bg-white
-      border
-      border-slate-200
-      rounded-2xl
-      shadow-lg
-      max-h-80
-      overflow-auto
-      "
-    >
-
-      <input
-        placeholder="Buscar cliente..."
-        value={clientSearch}
-        onChange={(e) =>
-          setClientSearch(
-            e.target.value
-          )
-        }
-        className="
-        w-full
-        p-3
-        border-b
-        border-slate-200
-        outline-none
-        "
-      />
-
-      {clients
-        .filter(client =>
-          client.name
-            .toLowerCase()
-            .includes(
-              clientSearch.toLowerCase()
-            )
-        )
-        .map(client => (
-
-          <div
-            key={client.id}
-            onClick={() => {
-
-              setForm({
-                ...form,
-                clientId:
-                  String(
-                    client.id
-                  ),
-              });
-
-              setShowClients(
-                false
-              );
-
-              setClientSearch(
-                ""
-              );
-            }}
-            className="
-            p-4
-            border-b
-            border-slate-100
-            hover:bg-slate-50
-            cursor-pointer
-            transition-all
-            "
-          >
-
-            <div
-              className="
-              font-semibold
-              "
-            >
-              {client.name}
-            </div>
-
-          </div>
-
-        ))}
-
-    </div>
-
-  )}
-
-</div>
 
 </div>
    <div className="relative mb-4">
