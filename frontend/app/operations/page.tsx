@@ -276,7 +276,36 @@ p-8
           {order.client.name}
         </h2>
 <div className="mt-2">
-
+{order.operationType ===
+"PICKUP" ? (
+  <span
+    className="
+    bg-violet-100
+    text-violet-700
+    px-3
+    py-1
+    rounded-full
+    text-sm
+    font-semibold
+    "
+  >
+    Retiro
+  </span>
+) : (
+  <span
+    className="
+    bg-emerald-100
+    text-emerald-700
+    px-3
+    py-1
+    rounded-full
+    text-sm
+    font-semibold
+    "
+  >
+    Entrega
+  </span>
+)}
   {order.priority === "URGENT" ? (
   <span
     className="

@@ -20,7 +20,10 @@ export class Client {
   @Column({ nullable: true })
   notes: string;
 
-  
+  @Column({
+  default: "CLIENT",
+})
+type: string;
 
 @Column({
   type: 'float',

@@ -6,6 +6,7 @@ import { ChevronDown, Search, Calendar, Clock3, ClipboardList, FileText } from "
 interface Client {
   id: number;
   name: string;
+  type: string;
 }
 
 interface Order {
@@ -46,6 +47,7 @@ const [messageType, setMessageType] =
     shift: "",
     notes: "",
     priority: "NORMAL",
+    operationType:"DELIVERY"
   });
 
   const fetchClients = async () => {
@@ -127,6 +129,7 @@ setTimeout(() => {
   shift: "MORNING",
   notes: "",
   priority: "NORMAL",
+  operationType:""
 });
 
       fetchOrders();
@@ -264,7 +267,26 @@ mx-auto
 
     <ChevronDown size={18} />
   </button>
+<select
+  value={
+    form.operationType
+  }
+  onChange={(e) =>
+    setForm({
+      ...form,
+      operationType:
+        e.target.value,
+    })
+  }
+>
+  <option value="DELIVERY">
+    Entrega
+  </option>
 
+  <option value="PICKUP">
+    Retiro
+  </option>
+</select>
   {showClients && (
 
     <div

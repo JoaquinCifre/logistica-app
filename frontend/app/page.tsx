@@ -22,6 +22,7 @@ interface Client {
 longitude?: number;
 contactName?: string;
 deliveryInstructions?: string;
+type: string;
 }
 
 export default function Home() {
@@ -48,6 +49,7 @@ const [messageType, setMessageType] =
     phone: "",
     schedule: "",
     notes: "",
+    type: ""
   });
 
   const fetchClients = async () => {
@@ -103,6 +105,7 @@ setTimeout(() => {
         phone: "",
         schedule: "",
         notes: "",
+        type:""
       });
 
       fetchClients();
@@ -319,6 +322,35 @@ duration-200
     "
   >
     {client.name}
+    {client.type === "SUPPLIER" ? (
+  <span
+    className="
+    ml-2
+    px-2
+    py-1
+    rounded-full
+    text-xs
+    bg-violet-100
+    text-violet-700
+    "
+  >
+    Proveedor
+  </span>
+) : (
+  <span
+    className="
+    ml-2
+    px-2
+    py-1
+    rounded-full
+    text-xs
+    bg-blue-100
+    text-blue-700
+    "
+  >
+    Cliente
+  </span>
+)}
   </div>
 
   <div
@@ -505,7 +537,37 @@ w-full
   />
 </div>
 
-        
+ <div>
+  <label className="block text-sm text-slate-500 mb-2">
+    Tipo
+  </label>
+
+  <select
+    value={form.type}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        type: e.target.value,
+      })
+    }
+    className="
+    w-full
+    border
+    border-slate-200
+    rounded-xl
+    px-4
+    py-3
+    "
+  >
+    <option value="CLIENT">
+      Cliente
+    </option>
+
+    <option value="SUPPLIER">
+      Proveedor
+    </option>
+  </select>
+</div>       
 <div>
   <label
     className="
