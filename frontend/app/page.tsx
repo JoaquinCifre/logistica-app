@@ -587,15 +587,16 @@ outline-none
     </option>
     
   </select>
-  <ChevronDown
+ <ChevronDown
     size={18}
     className="
-absolute
-right-4
-bottom-7
-pointer-events-none
-text-slate-500
-"
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
   />
 </div>       
 <div>

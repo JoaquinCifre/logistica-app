@@ -546,7 +546,7 @@ rounded-xl
 text-slate-500
 px-4
 py-3
-mb-4
+mb-6
 shadow-sm
 transition-all
 duration-200
@@ -589,7 +589,7 @@ rounded-xl
 px-4
 py-3
 mt-4
-mb-4
+mb-6
 appearance-none
 bg-white
 text-slate-500
@@ -636,7 +636,7 @@ rounded-xl
 text-slate-500
 px-4
 py-3
-mb-4
+mb-6
 shadow-sm
 transition-all
 duration-200
@@ -738,7 +738,18 @@ outline-none
 </button>
 
 </div>
-
+<div
+    className="
+    text-sm
+    font-medium
+    text-slate-500
+    mb-2
+    mt-6
+    ml-2
+    "
+  >
+    Fecha
+  </div>
 <input className="
 w-full
 text-slate-500
