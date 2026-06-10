@@ -592,7 +592,7 @@ outline-none
     className="
     absolute
     right-4
-    bottom-4
+    bottom-5
     
     pointer-events-none
     text-slate-500
