@@ -61,8 +61,7 @@ const [selectedDate, setSelectedDate] =
   route.length > 0
     ? route[0]
     : null;
-console.log("ORDER:", order);
-console.log("OPERATIONS:", order.operations);
+
  const updateStatus = async (
   status: string
 ) => {
@@ -216,7 +215,7 @@ console.log("OPERATIONS:", order.operations);
   "
 >
 
-  {order.operations?.map(
+  {order?.operations?.map(
     (op: string) => {
 
       if (op === "DELIVERY") {

@@ -947,7 +947,7 @@ duration-200
   mt-3
   "
 >
-  {order.operations?.map(
+  {order?.operations?.map(
     (op) => (
       <span
         key={op}
