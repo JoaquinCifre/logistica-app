@@ -206,7 +206,7 @@ gap-3
 cursor-pointer
 font-semibold
 text-2xl
-mb-10
+mb-6
 mt-4
 text-slate-800
 "
@@ -474,7 +474,7 @@ w-full
   <label
     className="
     block
-    mb-4
+    mb-2
     flex
     justify-center
     text-base
@@ -492,8 +492,9 @@ w-full
     border-slate-300
     rounded-xl
     p-3
-    mb-6
+    mb-4
     "
+    placeholder="Nombre"
     value={form.name}
     onChange={(e) =>
       setForm({
@@ -509,7 +510,7 @@ w-full
   <label
     className="
     block
-    mb-4
+    mb-2
      flex
     justify-center
     text-base
@@ -527,7 +528,9 @@ w-full
     border-slate-300
     rounded-xl
     p-3
+    mb-4
     "
+    placeholder="Dirección"
     value={form.address}
     onChange={(e) =>
       setForm({
@@ -542,7 +545,7 @@ w-full
   <label
     className="
     block
-    mb-4
+    mb-2
      flex
     justify-center
     text-base
@@ -560,7 +563,9 @@ w-full
     border-slate-300
     rounded-xl
     p-3
+    mb-4
     "
+    placeholder="Teléfono"
     value={form.phone}
     onChange={(e) =>
       setForm({
@@ -576,7 +581,7 @@ w-full
   <label
     className="
     block
-    mb-4
+    mb-2
      flex
     justify-center
     text-base
@@ -594,8 +599,9 @@ w-full
     border-slate-300
     rounded-xl
     p-3
-    mb-8
+    mb-4
     "
+    placeholder="Horario"
     value={form.schedule}
     onChange={(e) =>
       setForm({
@@ -629,7 +635,7 @@ text-slate-800
   border-slate-300
   rounded-xl
   p-3
-  mb-4
+  mb-6
   "
           placeholder="Observaciones"
           value={form.notes}
