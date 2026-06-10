@@ -55,87 +55,12 @@ const [selectedDate, setSelectedDate] =
   selectedShift,
 ]);
 
-  if (!route.length) {
-    return (
-      <main className="p-8">
-        <h1
-  className="
-  text-4xl
-  font-bold
-  tracking-tight
-  mb-8
-  "
->
-  Recorrido de hoy
-</h1>
+ 
 
-        <div className="
-bg-white
-rounded-2xl
-shadow-sm
-border
-border-slate-200
-p-8
-">
-
-  <div
-  className="
-  flex
-  items-center
-    justify-center
-  gap-4
-  mb-4
-  "
->
-
-  <div
-  className="
-  w-20
-  h-20
-  rounded-full
-  bg-green-100
-  flex
-  items-center
-  justify-center
-  "
->
-  <CheckCircle2
-    size={48}
-    className="text-green-600"
-  />
-</div>
-
-  <div
-  className="
-  text-3xl
-  font-bold
-  text-slate-900
-  "
->
-  Recorrido finalizado
-</div>
-
-</div>
-
-  <div
-  className="
-  mt-3
-  text-slate-500
-  text-lg
-  flex
-  items-center
-  justify-center
-  "
->
-  No quedan entregas pendientes para hoy.
-</div>
-
-</div>
-      </main>
-    );
-  }
-
-  const order = route[0];
+  const order =
+  route.length > 0
+    ? route[0]
+    : null;
 console.log("ORDER:", order);
 console.log("OPERATIONS:", order.operations);
  const updateStatus = async (
@@ -235,9 +160,11 @@ console.log("OPERATIONS:", order.operations);
 </div>
       <div
   className="mt-6">
+  {order && (
   <MapView order={order} />
+)}
 </div>
-
+{order ? (
       <div
   className="
   bg-white
@@ -692,6 +619,72 @@ transition-all
 
 </div>
         </div>
+
+) : (
+
+<div
+  className="
+  bg-white
+  rounded-2xl
+  border
+  border-slate-200
+  shadow-sm
+  p-8
+  mt-6
+  "
+>
+
+  <div
+    className="
+    flex
+    items-center
+    justify-center
+    gap-4
+    mb-4
+    "
+  >
+
+    <div
+      className="
+      w-20
+      h-20
+      rounded-full
+      bg-green-100
+      flex
+      items-center
+      justify-center
+      "
+    >
+      <CheckCircle2
+        size={48}
+        className="text-green-600"
+      />
+    </div>
+
+    <div
+      className="
+      text-3xl
+      font-bold
+      text-slate-900
+      "
+    >
+      Recorrido finalizado
+    </div>
+
+  </div>
+
+  <div
+    className="
+    text-center
+    text-slate-500
+    "
+  >
+    No quedan pedidos para este turno.
+  </div>
+
+</div>
+
+)}
 
       
 
