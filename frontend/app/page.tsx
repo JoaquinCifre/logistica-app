@@ -568,6 +568,7 @@ bg-white
 rounded-xl
 px-4
 py-3
+mb-4
 text-slate-500
 shadow-sm
 transition-all
@@ -586,8 +587,7 @@ outline-none
     <option value="SUPPLIER">
       Proveedor
     </option>
-  </select>
-  <ChevronDown
+    <ChevronDown
     size={18}
     className="
     absolute
@@ -598,6 +598,8 @@ outline-none
     text-slate-500
     "
   />
+  </select>
+  
 </div>       
 <div>
   <label

@@ -277,6 +277,8 @@ mx-auto
     font-medium
     text-slate-500
     mb-3
+    mt-4
+    ml-2
     "
   >
     Operaciones
