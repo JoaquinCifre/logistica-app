@@ -568,7 +568,7 @@ bg-white
 rounded-xl
 px-4
 py-3
-mb-4
+mb-2
 text-slate-500
 shadow-sm
 transition-all

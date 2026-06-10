@@ -458,7 +458,18 @@ mx-auto
 
 </div>
    <div className="relative mb-4">
-
+<div
+    className="
+    text-sm
+    font-medium
+    text-slate-500
+    mb-3
+    mt-4
+    ml-2
+    "
+  >
+   Prioridad
+  </div>
 <select 
 
   value={form.priority}
@@ -514,7 +525,18 @@ outline-none
   />
 
 </div>
-
+<div
+    className="
+    text-sm
+    font-medium
+    text-slate-500
+    mb-3
+    mt-4
+    ml-2
+    "
+  >
+    Fecha
+  </div>
         <input className="
 w-full
 border
@@ -548,6 +570,7 @@ appearance-none
 
      
 <div className="relative mb-4 ">
+  
         <select 
 
           value={form.shift}
