@@ -530,8 +530,8 @@ outline-none
     text-sm
     font-medium
     text-slate-500
-    mb-3
-    mt-4
+    mb-2
+    mt-6
     ml-2
     "
   >
@@ -547,7 +547,6 @@ text-slate-500
 px-4
 py-3
 mb-4
-mt-4
 shadow-sm
 transition-all
 duration-200
