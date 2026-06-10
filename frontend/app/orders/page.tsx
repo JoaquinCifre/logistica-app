@@ -919,6 +919,7 @@ duration-200
         text-blue-700
         px-3
         py-1
+        mb-2
         rounded-full
         text-xs
         font-medium
