@@ -35,9 +35,10 @@ estimatedTime: string;
   })
   notes: string;
   @Column({
-  default: "DELIVERY",
+  type: "simple-array",
+  nullable: true,
 })
-operationType: string;
+operations: string[];
 
 
 @Column({

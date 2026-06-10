@@ -538,7 +538,15 @@ w-full
 </div>
 
  <div>
-  <label className="block text-sm text-slate-500 mb-2">
+  <label className="
+    block
+    mb-2
+    flex
+    justify-center
+    text-base
+    font-semibold
+    text-slate-700
+    ">
     Tipo
   </label>
 
@@ -551,13 +559,25 @@ w-full
       })
     }
     className="
-    w-full
-    border
-    border-slate-200
-    rounded-xl
-    px-4
-    py-3
-    "
+w-full
+appearance-none
+bg-white
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+outline-none
+
+"
   >
     <option value="CLIENT">
       Cliente
@@ -567,6 +587,17 @@ w-full
       Proveedor
     </option>
   </select>
+  <ChevronDown
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
 </div>       
 <div>
   <label

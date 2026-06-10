@@ -18,6 +18,7 @@ interface Order {
   priority: string;
   client: Client;
   completedAt?: string;
+  operations: string[];
 }
 
 export default function OrdersPage() {
@@ -42,13 +43,13 @@ const [messageType, setMessageType] =
     "success" | "error"
   >("success");
   const [form, setForm] = useState({
-    clientId: "",
-    date: "",
-    shift: "",
-    notes: "",
-    priority: "NORMAL",
-    operationType:"DELIVERY"
-  });
+  clientId: "",
+  date: "",
+  shift: "",
+  notes: "",
+  priority: "NORMAL",
+  operations: ["DELIVERY"]
+});
 
   const fetchClients = async () => {
     const response = await axios.get(
@@ -120,6 +121,7 @@ setTimeout(() => {
           shift: form.shift,
           notes: form.notes,
           priority: form.priority,
+          operations: form.operations,
         }
       );
 
@@ -129,7 +131,7 @@ setTimeout(() => {
   shift: "MORNING",
   notes: "",
   priority: "NORMAL",
-  operationType:""
+  operations:["DELIVERY"]
 });
 
       fetchOrders();
@@ -267,26 +269,99 @@ mx-auto
 
     <ChevronDown size={18} />
   </button>
-<select
-  value={
-    form.operationType
-  }
-  onChange={(e) =>
-    setForm({
-      ...form,
-      operationType:
-        e.target.value,
-    })
-  }
->
-  <option value="DELIVERY">
-    Entrega
-  </option>
+<div className="mb-6">
 
-  <option value="PICKUP">
-    Retiro
-  </option>
-</select>
+  <div
+    className="
+    text-sm
+    font-medium
+    text-slate-500
+    mb-3
+    "
+  >
+    Operaciones
+  </div>
+
+  <div
+    className="
+    grid
+    grid-cols-1
+    md:grid-cols-3
+    gap-3
+    "
+  >
+
+    {[
+      {
+        value: "DELIVERY",
+        label: "Entrega",
+      },
+      {
+        value: "PICKUP",
+        label: "Retiro",
+      },
+      {
+        value: "COLLECTION",
+        label: "Cobro",
+      },
+    ].map((item) => (
+
+      <button
+        key={item.value}
+        type="button"
+        onClick={() => {
+
+          const exists =
+            form.operations.includes(
+              item.value
+            );
+
+          setForm({
+            ...form,
+            operations:
+              exists
+                ? form.operations.filter(
+                    o =>
+                      o !== item.value
+                  )
+                : [
+                    ...form.operations,
+                    item.value,
+                  ],
+          });
+        }}
+        className={`
+          border
+          rounded-xl
+          p-4
+          text-left
+          transition-all
+          duration-200
+          ${
+            form.operations.includes(
+              item.value
+            )
+              ? `
+                bg-blue-50
+                border-blue-300
+                text-blue-700
+              `
+              : `
+                bg-white
+                border-slate-200
+                hover:bg-slate-50
+              `
+          }
+        `}
+      >
+        {item.label}
+      </button>
+
+    ))}
+
+  </div>
+
+</div>
   {showClients && (
 
     <div
@@ -822,6 +897,37 @@ duration-200
     : order.priority === "IMPORTANT"
     ? "Importante"
     : "Normal"}
+</div>
+<div
+  className="
+  flex
+  flex-wrap
+  gap-2
+  mt-3
+  "
+>
+  {order.operations?.map(
+    (op) => (
+      <span
+        key={op}
+        className="
+        bg-blue-100
+        text-blue-700
+        px-3
+        py-1
+        rounded-full
+        text-xs
+        font-medium
+        "
+      >
+        {op === "DELIVERY"
+          ? "Entrega"
+          : op === "PICKUP"
+          ? "Retiro"
+          : "Cobro"}
+      </span>
+    )
+  )}
 </div>
           <div className="flex items-center gap-2 mt-2">
   <FileText size={16} />
