@@ -53,14 +53,8 @@ export default function RootLayout({
   flex-1
   p-4
   md:p-8
-<<<<<<< HEAD
   mb-6
   md:mb-0
-=======
-  mt-6
-  md:mt-0
-  md:mb-4
->>>>>>> fa8cd3d996928bf599d6beb29a2921dda06b68ad
   overflow-y-auto
   "
 >

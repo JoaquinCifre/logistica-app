@@ -104,6 +104,7 @@ export default function Sidebar() {
         : ""
     }
 md:mb-4
+mb-4
     md:mx-3
     md:hover:bg-slate-700
     md:hover:translate-x-1
@@ -114,6 +115,7 @@ md:mb-4
           display: "flex",
           alignItems: "center",
           gap: "10px",
+
           
         }}
       >

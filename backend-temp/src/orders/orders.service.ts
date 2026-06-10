@@ -8,7 +8,20 @@ const DEPOT = {
   latitude: -34.651,
   longitude: -58.436,
 };
+const priorityValue = (
+  priority: string,
+) => {
+  switch (priority) {
+    case 'URGENT':
+      return 3;
 
+    case 'IMPORTANT':
+      return 2;
+
+    default:
+      return 1;
+  }
+};
 function distance(
   lat1,
   lon1,
@@ -310,20 +323,7 @@ await this.ordersRepository.update(
       },
     });
 
-    const priorityValue = (
-  priority: string,
-) => {
-  switch (priority) {
-    case "URGENT":
-      return 3;
-
-    case "IMPORTANT":
-      return 2;
-
-    default:
-      return 1;
-  }
-};
+    
 
 orders.sort(
   (a, b) =>
@@ -444,18 +444,7 @@ return {
   totalDistance,
 };
 
-  const priorityValue = (
-    priority: string,
-  ) => {
-    switch (priority) {
-      case 'URGENT':
-        return 3;
-      case 'IMPORTANT':
-        return 2;
-      default:
-        return 1;
-    }
-  };
+ 
 
   
 
