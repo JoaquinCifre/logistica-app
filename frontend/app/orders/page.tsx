@@ -517,7 +517,7 @@ outline-none
     className="
     absolute
     right-4
-    bottom-6
+    bottom-4
     pointer-events-none
     text-slate-500
     "
