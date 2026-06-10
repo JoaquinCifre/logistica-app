@@ -668,8 +668,12 @@ duration-200
   p-6
   "
 >
-      <h2>Pedidos</h2>
-<div className="relative mb-4">
+      <h2>className="
+  text-2xl
+  font-semibold
+  
+  "Pedidos</h2>
+<div className="relative mt-6 mb-4">
 
   <input
     placeholder="Buscar por cliente..."
