@@ -277,9 +277,7 @@ console.log("OPERATIONS:", order.operations);
           {order.client.name}
         </h2>
         <div>
-  {JSON.stringify(
-    order.operations
-  )}
+ 
 </div>
 <div
   className="
