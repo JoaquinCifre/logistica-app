@@ -593,7 +593,7 @@ outline-none
     absolute
     right-4
     bottom-8
-    -translate-y-1/2
+    
     pointer-events-none
     text-slate-500
     "
