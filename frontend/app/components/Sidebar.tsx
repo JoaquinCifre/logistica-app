@@ -39,7 +39,7 @@ export default function Sidebar() {
   "
   style={{
     background:
-  "linear-gradient(180deg,#162355 0%,#1c368c 100%)",
+  "#162355",
     color: "white",
    
   }}
