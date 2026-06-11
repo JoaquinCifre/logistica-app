@@ -51,9 +51,8 @@ export default function Sidebar() {
   justify-center
   
   gap-3
-  mb-4
-  mt-4
-  md:mb-10
+  py-6
+  md:mb-6
   "
 >
   <Truck size={30} className="text-brand-300"/>
@@ -77,7 +76,7 @@ export default function Sidebar() {
   flex-row
   md:flex-col
   gap-2
-  mt-8 
+  mt-2 
   md:mt-0
   justify-center
   "
@@ -101,13 +100,13 @@ export default function Sidebar() {
     
     ${
       pathname === link.href
-        ? "bg-brand-600 shadow-md border broder-brand-500"
+        ? "bg-brand-600 shadow-md border border-brand-500"
         : ""
     }
 md:mb-4
 mb-4
     md:mx-3
-    md:hover:bg-brand-700
+    md:hover:bg-brand-800
     md:hover:translate-x-1
   `}
 >
