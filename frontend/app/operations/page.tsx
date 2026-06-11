@@ -113,48 +113,59 @@ const [selectedDate, setSelectedDate] =
   "
 >
 
-  <input
-    type="date"
-    value={selectedDate}
-    onChange={(e) =>
-      setSelectedDate(
-        e.target.value
-      )
-    }
-    className="
-    border
-    border-slate-200
-    rounded-xl
-    px-4
-    py-3
-    bg-white
-    "
-  />
+  <div className="flex-1 relative">
 
-  <select
-    value={selectedShift}
-    onChange={(e) =>
-      setSelectedShift(
-        e.target.value
-      )
-    }
-    className="
-    border
-    border-slate-200
-    rounded-xl
-    px-4
-    py-3
-    bg-white
-    "
-  >
-    <option value="MORNING">
-      Mañana
-    </option>
+    <input
+      type="date"
+      value={selectedDate}
+      onChange={(e) =>
+        setSelectedDate(
+          e.target.value
+        )
+      }
+      className="
+      w-full
+      border
+      border-slate-200
+      rounded-xl
+      px-4
+      py-3
+      bg-white
+      "
+    />
 
-    <option value="AFTERNOON">
-      Tarde
-    </option>
-  </select>
+  </div>
+
+  <div className="flex-1 relative">
+
+    <select
+      value={selectedShift}
+      onChange={(e) =>
+        setSelectedShift(
+          e.target.value
+        )
+      }
+      className="
+      w-full
+      border
+      border-slate-200
+      rounded-xl
+      px-4
+      py-3
+      bg-white
+      appearance-none
+      "
+    >
+      <option value="MORNING">
+        Mañana
+      </option>
+
+      <option value="AFTERNOON">
+        Tarde
+      </option>
+    </select>
+
+  </div>
 
 </div>
       <div
@@ -251,7 +262,7 @@ const [selectedDate, setSelectedDate] =
             font-semibold
             "
           >
-            Retiro
+            Retirar
           </span>
         );
       }
@@ -270,7 +281,7 @@ const [selectedDate, setSelectedDate] =
             font-semibold
             "
           >
-            Cobro
+            Cobrar
           </span>
         );
       }
@@ -578,7 +589,9 @@ font-semibold
           
 </div>
 
-  <div className="mt-8">
+  {route.length > 1 && (
+
+<div className="mt-8">
 
   <h3 className="font-bold text-lg">
     Próximas entregas
@@ -616,7 +629,7 @@ transition-all
 
     ))}
 
-</div>
+</div>)}
         </div>
 
 ) : (
