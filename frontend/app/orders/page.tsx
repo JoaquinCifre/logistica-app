@@ -559,7 +559,7 @@ rounded-xl
 text-slate-500
 px-4
 py-3
-mb-6
+
 shadow-sm
 transition-all
 duration-200
@@ -584,7 +584,7 @@ appearance-none
     className="
     absolute
     right-4
-    top-1/2
+    top-4
     -translate-y-1/2
     pointer-events-none
     text-slate-500
@@ -809,7 +809,7 @@ placeholder="Fecha"
     className="
     absolute
     right-4
-    top-1/2
+    top-6
     -translate-y-1/2
     pointer-events-none
     text-slate-500
