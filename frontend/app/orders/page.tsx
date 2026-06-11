@@ -1002,10 +1002,10 @@ duration-200
         "
       >
         {op === "DELIVERY"
-          ? "Entregó"
+          ? "Entrega"
           : op === "PICKUP"
-          ? "Retiró"
-          : "Cobró"}
+          ? "Retira"
+          : "Cobra"}
       </span>
     )
   )}

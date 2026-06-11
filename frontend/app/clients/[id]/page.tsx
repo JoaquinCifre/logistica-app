@@ -381,8 +381,8 @@ mb-5
   <button
   onClick={saveClient}
   className="
-bg-indigo-600
-hover:bg-indigo-700
+bg-brand-600
+hover:bg-brand-700
 text-white
 px-5
 py-3

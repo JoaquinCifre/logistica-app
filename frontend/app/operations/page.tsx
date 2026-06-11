@@ -471,8 +471,80 @@ rounded-xl
 p-3
 bg-slate-50
 ">
-  <FileText size={16} className="mt-1 shrink-0" />
-  <span>{order.client.notes}</span>
+  {order.notes && (
+  <div
+    className="
+    flex
+    items-start
+    gap-2
+    mt-2
+    border
+    border-slate-200
+    rounded-xl
+    p-3
+    bg-brand-50
+    "
+  >
+    <FileText
+      size={16}
+      className="mt-1 shrink-0"
+    />
+
+    <div>
+      <div
+        className="
+        text-xs
+        font-semibold
+        text-brand-700
+        uppercase
+        "
+      >
+        Observaciones del pedido
+      </div>
+
+      <div>
+        {order.notes}
+      </div>
+    </div>
+  </div>
+)}
+{order.client.notes && (
+  <div
+    className="
+    flex
+    items-start
+    gap-2
+    mt-2
+    border
+    border-slate-200
+    rounded-xl
+    p-3
+    bg-slate-50
+    "
+  >
+    <FileText
+      size={16}
+      className="mt-1 shrink-0"
+    />
+
+    <div>
+      <div
+        className="
+        text-xs
+        font-semibold
+        text-slate-600
+        uppercase
+        "
+      >
+        Observaciones del cliente
+      </div>
+
+      <div>
+        {order.client.notes}
+      </div>
+    </div>
+  </div>
+)}
 </div>
 
         <div className="
