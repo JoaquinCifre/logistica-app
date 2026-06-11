@@ -621,8 +621,8 @@ transition-all
           {nextOrder.client.name}
         </div>
 
-        <div className="text-sm">
-         <MapPin size={16} /> {nextOrder.client.address}
+        <div className="flex items-center gap-1 text-sm">
+         <MapPin size={16} /> <span>{nextOrder.client.address}</span> 
         </div>
 
       </div>
