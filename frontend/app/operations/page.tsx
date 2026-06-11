@@ -8,6 +8,7 @@ import {
   Package,
   User,
   Clock,
+  Calendar,
   MessageCircle,
   FileText,
   MapPin,
@@ -134,8 +135,20 @@ pr-4
 py-3
 bg-white
 text-slate-700
+appearance-none
 "
     />
+    <Calendar
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
 
   </div>
 
