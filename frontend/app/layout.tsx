@@ -34,7 +34,7 @@ export default function RootLayout({
      <body
   className="min-h-screen"
   style={{
-    background: "#F8FAFC",
+    background: "#eff6ff",
     color: "#0F172A",
   }}
 >

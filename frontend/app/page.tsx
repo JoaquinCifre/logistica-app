@@ -220,7 +220,7 @@ text-slate-800
     className="
     w-full
     border
-    border-slate-300
+    border-slate-200
     rounded-xl
     p-3
     mb-3
@@ -344,8 +344,8 @@ duration-200
     py-1
     rounded-full
     text-xs
-    bg-blue-100
-    text-blue-700
+    bg-brand-100
+    text-brand-700
     "
   >
     Cliente
@@ -445,8 +445,8 @@ mt-2
         }
         className="
 mt-4
-bg-blue-600
-hover:bg-blue-700
+bg-brand-600
+hover:bg-brand-700
 text-white
 px-4
 py-2
@@ -521,7 +521,7 @@ w-full
     className="
     w-full
     border
-    border-slate-300
+    border-slate-200
     rounded-xl
     p-3
     mb-4
@@ -618,7 +618,7 @@ outline-none
     className="
     w-full
     border
-    border-slate-300
+    border-slate-200
     rounded-xl
     p-3
     mb-4
@@ -653,7 +653,7 @@ outline-none
     className="
     w-full
     border
-    border-slate-300
+    border-slate-200
     rounded-xl
     p-3
     mb-4
@@ -689,7 +689,7 @@ outline-none
     className="
     w-full
     border
-    border-slate-300
+    border-slate-200
     rounded-xl
     p-3
     mb-4
@@ -725,7 +725,7 @@ text-slate-800
   lg:col-span-3
   w-full
   border
-  border-slate-300
+  border-slate-200
   rounded-xl
   p-3
   mb-6
@@ -743,8 +743,8 @@ text-slate-800
   className="
  
   w-full
-  bg-blue-600
-  hover:bg-blue-700
+  bg-brand-600
+  hover:bg-brand-700
   text-white
   py-3
   rounded-xl

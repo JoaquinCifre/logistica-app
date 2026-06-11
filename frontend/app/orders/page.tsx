@@ -348,7 +348,7 @@ mx-auto
             p-4
             border-b
             border-slate-100
-            hover:bg-slate-50
+            hover:bg-brand-50
             cursor-pointer
             transition-all
             "
@@ -449,14 +449,14 @@ mx-auto
               item.value
             )
               ? `
-                bg-blue-50
-                border-blue-300
-                text-blue-700
+                bg-brand-50
+                border-brand-300
+                text-brand-700
               `
               : `
                 bg-white
                 border-slate-200
-                hover:bg-slate-50
+                hover:bg-brand-50
               `
           }
         `}
@@ -507,8 +507,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 
 ">
@@ -564,8 +564,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 appearance-none
 "
@@ -620,8 +620,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 ">
   <option value="">
@@ -664,8 +664,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 appearance-none
 "
@@ -684,8 +684,8 @@ appearance-none
   onClick={createOrder}
   className="
   w-full
-  bg-blue-600
-  hover:bg-blue-700
+  bg-brand-600
+  hover:bg-brand-700
 shadow-sm
 hover:shadow-md
 hover:-translate-y-0.5
@@ -741,8 +741,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 "
   />
@@ -787,8 +787,8 @@ shadow-sm
 transition-all
 duration-200
 focus:ring-2
-focus:ring-blue-500
-focus:border-blue-500
+focus:ring-brand-500
+focus:border-brand-500
 outline-none
 appearance-none
 "
@@ -991,8 +991,8 @@ duration-200
       <span
         key={op}
         className="
-        bg-blue-100
-        text-blue-700
+        bg-brand-100
+        text-brand-700
         px-3
         py-1
         mb-2
@@ -1002,10 +1002,10 @@ duration-200
         "
       >
         {op === "DELIVERY"
-          ? "Entrega"
+          ? "Entregó"
           : op === "PICKUP"
-          ? "Retiro"
-          : "Cobro"}
+          ? "Retiró"
+          : "Cobró"}
       </span>
     )
   )}
@@ -1021,8 +1021,8 @@ duration-200
     }
     className="
     mt-4
-    bg-blue-600
-hover:bg-blue-700
+    bg-brand-600
+hover:bg-brand-700
 text-white
 px-5
 py-3

@@ -8,8 +8,22 @@
 }
 
 @theme inline {
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-brand-50: #eff6ff;
+--color-brand-100: #dae9ff;
+--color-brand-200: #bed9ff;
+--color-brand-300: #91c2ff;
+--color-brand-400: #5da1fd;
+--color-brand-500: #4183fa;
+--color-brand-600: #215def;
+--color-brand-700: #1948dc;
+--color-brand-800: #1b3bb2;
+--color-brand-900: #1c368c;
+--color-brand-950: #162355;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

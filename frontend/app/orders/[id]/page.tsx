@@ -129,10 +129,10 @@ export default function OrderPage({
 px-4
 py-3
 border
-border-slate-300
+border-slate-200
 rounded-xl
 bg-white
-hover:bg-slate-50
+hover:bg-brand-50
 text-slate-700
 font-semibold
 transition-all

@@ -221,8 +221,8 @@ appearance-none
   className="
   inline-flex
   items-center
-  bg-blue-50
-  text-blue-700
+  bg-brand-50
+  text-brand-700
   px-2
   py-2
   rounded-full
@@ -519,8 +519,8 @@ duration-200
   items-center
   justify-center
   gap-2
-  bg-slate-800
-  hover:bg-slate-900
+  bg-brand-950
+  hover:bg-brand-800
   text-white
   rounded-xl
   shadow-sm

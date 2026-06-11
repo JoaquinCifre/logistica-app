@@ -39,7 +39,7 @@ export default function Sidebar() {
   "
   style={{
     background:
-      "linear-gradient(180deg,#0F172A 0%,#111827 100%)",
+  "linear-gradient(180deg,#162355 0%,#1c368c 100%)",
     color: "white",
    
   }}
@@ -56,13 +56,14 @@ export default function Sidebar() {
   md:mb-10
   "
 >
-  <Truck size={30} />
+  <Truck size={30} className="text-brand-300"/>
 
   <span
   className="
   text-lg
   md:text-xl
   font-bold
+  text-brand-100
   whitespace-nowrap
   "
 >
@@ -100,13 +101,13 @@ export default function Sidebar() {
     
     ${
       pathname === link.href
-        ? "bg-blue-600 shadow-md"
+        ? "bg-brand-600 shadow-md border broder-brand-500"
         : ""
     }
 md:mb-4
 mb-4
     md:mx-3
-    md:hover:bg-slate-700
+    md:hover:bg-brand-700
     md:hover:translate-x-1
   `}
 >

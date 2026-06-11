@@ -155,9 +155,9 @@ mb-6
 rounded-xl
 font-semibold
 border
-border-slate-300
+border-slate-200
 bg-white
-hover:bg-slate-50
+hover:bg-brand-50
 text-slate-700
 transition-all
 duration-200
@@ -199,7 +199,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -227,7 +227,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -255,7 +255,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -283,7 +283,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -311,7 +311,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -342,7 +342,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
@@ -370,7 +370,7 @@ text-slate-700
   className="
 w-full
 border
-border-slate-300
+border-slate-200
 rounded-xl
 p-3
 mb-5
