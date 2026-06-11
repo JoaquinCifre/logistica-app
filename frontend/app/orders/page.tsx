@@ -7,6 +7,7 @@ interface Client {
   id: number;
   name: string;
   type: string;
+  address: string;
 }
 
 interface Order {
@@ -255,15 +256,26 @@ mx-auto
   >
     <span>
 
-      {form.clientId
-        ? clients.find(
+      {
+  form.clientId
+    ? (() => {
+
+        const client =
+          clients.find(
             c =>
               c.id ===
               Number(
                 form.clientId
               )
-          )?.name
-        : "Seleccionar cliente"}
+          );
+
+        return client
+          ? `${client.name} - ${client.address}`
+          : "Seleccionar cliente";
+
+      })()
+    : "Seleccionar cliente"
+}
 
     </span>
 
@@ -347,7 +359,7 @@ mx-auto
               font-semibold
               "
             >
-              {client.name}
+              {client.name} - {client.address}
             </div>
 
           </div>
@@ -875,6 +887,8 @@ duration-200
   "
 >
   {order.client?.name}
+  {" - "}
+{order.client?.address}
 </h3>
 
           <div className="flex items-center gap-2 mt-2">

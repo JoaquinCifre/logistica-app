@@ -235,11 +235,12 @@ text-slate-700
 </div>
 <div
   className="
-  mt-2
+  mt-4
   flex
   flex-wrap
   gap-2
   items-center
+  mb-4
   "
 >
 
