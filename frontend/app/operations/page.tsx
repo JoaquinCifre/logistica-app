@@ -14,7 +14,8 @@ import {
   Phone,
   Navigation,
   Clock3,
-  CheckCircle2
+  CheckCircle2,
+  ChevronDown
 } from "lucide-react";
 const MapView = dynamic(
   () => import("../components/OperationsMap"),
@@ -124,38 +125,43 @@ const [selectedDate, setSelectedDate] =
         )
       }
       className="
-      w-full
-      border
-      border-slate-200
-      rounded-xl
-      px-4
-      py-3
-      bg-white
-      "
+w-full
+border
+border-slate-200
+rounded-xl
+px-4
+pr-4
+py-3
+bg-white
+text-slate-700
+"
     />
 
   </div>
 
-  <div className="flex-1 relative">
+  
 
-    <select
-      value={selectedShift}
-      onChange={(e) =>
-        setSelectedShift(
-          e.target.value
-        )
-      }
-      className="
-      w-full
-      border
-      border-slate-200
-      rounded-xl
-      px-4
-      py-3
-      bg-white
-      appearance-none
-      "
-    >
+    <div className="flex-1 relative">
+
+  <select
+    value={selectedShift}
+    onChange={(e) =>
+      setSelectedShift(
+        e.target.value
+      )
+    }
+    className="
+    w-full
+    border
+    border-slate-200
+    rounded-xl
+    px-4
+    py-3
+    pr-12
+    bg-white
+    appearance-none
+    "
+  >
       <option value="MORNING">
         Mañana
       </option>
@@ -164,6 +170,17 @@ const [selectedDate, setSelectedDate] =
         Tarde
       </option>
     </select>
+    <ChevronDown
+  size={18}
+  className="
+  absolute
+  right-4
+  top-1/2
+  -translate-y-1/2
+  pointer-events-none
+  text-slate-500
+  "
+/>
 
   </div>
 
