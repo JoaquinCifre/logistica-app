@@ -100,7 +100,7 @@ export default function Sidebar() {
     
     ${
       pathname === link.href
-        ? "bg-brand-600 shadow-md border border-brand-500"
+        ? "bg-brand-800 shadow-md border border-brand-500"
         : ""
     }
 md:mb-4
