@@ -325,89 +325,42 @@ await this.ordersRepository.update(
 
     
 
-orders.sort(
-  (a, b) =>
-    priorityValue(
-      b.priority
-    ) -
-    priorityValue(
-      a.priority
-    )
-);
-  const validOrders = orders;
-
-  const route: Order[] = [];
-
-let currentLatitude =
-  DEPOT.latitude;
-
-let currentLongitude =
-  DEPOT.longitude;
-
-const remaining =
-  [...validOrders];
-
-while (
-  remaining.length > 0
-) {
-  let nearestIndex = 0;
-
-  let nearestDistance =
-    Number.MAX_VALUE;
-
-  for (
-    let i = 0;
-    i < remaining.length;
-    i++
-  ) {
-    const order =
-      remaining[i];
-
-    const distance =
-      Math.sqrt(
-        Math.pow(
-          order.client
-            .latitude -
-            currentLatitude,
-          2,
-        ) +
-          Math.pow(
-            order.client
-              .longitude -
-              currentLongitude,
-            2,
-          ),
-      );
-
-    if (
-      distance <
-      nearestDistance
-    ) {
-      nearestDistance =
-        distance;
-
-      nearestIndex = i;
-    }
-  }
-
-  const nextOrder =
-    remaining.splice(
-      nearestIndex,
-      1,
-    )[0];
-
-  route.push(
-    nextOrder,
+const validOrders =
+  orders.filter(
+    (order) =>
+      order.client?.latitude != null &&
+      order.client?.longitude != null
   );
 
-  currentLatitude =
-    nextOrder.client
-      .latitude;
+const urgent =
+  validOrders.filter(
+    (o) =>
+      o.priority === "URGENT"
+  );
 
-  currentLongitude =
-    nextOrder.client
-      .longitude;
-}
+const important =
+  validOrders.filter(
+    (o) =>
+      o.priority === "IMPORTANT"
+  );
+
+const normal =
+  validOrders.filter(
+    (o) =>
+      o.priority === "NORMAL"
+  );
+
+const route = [
+  ...optimizeNearestNeighbor(
+    urgent
+  ),
+  ...optimizeNearestNeighbor(
+    important
+  ),
+  ...optimizeNearestNeighbor(
+    normal
+  ),
+];
 
 let totalDistance = 0;
 
@@ -418,6 +371,7 @@ let previousLng =
   DEPOT.longitude;
 
 route.forEach((order) => {
+
   totalDistance += distance(
     previousLat,
     previousLng,
@@ -430,6 +384,7 @@ route.forEach((order) => {
 
   previousLng =
     order.client.longitude;
+
 });
 
 totalDistance += distance(
