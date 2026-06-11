@@ -405,11 +405,11 @@ mx-auto
       },
       {
         value: "PICKUP",
-        label: "Retiro",
+        label: "Retirar",
       },
       {
         value: "COLLECTION",
-        label: "Cobro",
+        label: "Cobrar",
       },
     ].map((item) => (
 
