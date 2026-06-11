@@ -544,10 +544,12 @@ outline-none
     mb-2
     mt-6
     ml-2
+   
     "
   >
     Fecha
   </div>
+  <div className="relative mb-4">
         <input className="
 w-full
 border
@@ -577,8 +579,18 @@ appearance-none
             })
           }
         />
-
-     
+ <Calendar
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+     </div>
 <div className="relative mb-4 ">
   
         <select 
@@ -761,6 +773,7 @@ outline-none
   >
     Fecha
   </div>
+  <div className="relative mb-4">
 <input className="
 w-full
 text-slate-500
@@ -791,6 +804,18 @@ placeholder="Fecha"
     marginBottom: "20px",
   }}
 />
+ <Calendar
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+</div>
 
 {orders
   .filter(
