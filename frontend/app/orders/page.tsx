@@ -401,7 +401,7 @@ mx-auto
     {[
       {
         value: "DELIVERY",
-        label: "Entrega",
+        label: "Entregar",
       },
       {
         value: "PICKUP",
