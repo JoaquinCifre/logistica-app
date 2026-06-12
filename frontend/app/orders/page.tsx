@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ChevronDown, Search, Calendar, Clock3, ClipboardList, FileText } from "lucide-react";
+import { ChevronDown, Warehouse, Search, Calendar, Clock3, ClipboardList, FileText } from "lucide-react";
 interface Client {
   id: number;
   name: string;
@@ -20,6 +20,7 @@ interface Order {
   client: Client;
   completedAt?: string;
   operations: string[];
+  requiresDepot: boolean;
 }
 
 export default function OrdersPage() {
@@ -49,7 +50,8 @@ const [messageType, setMessageType] =
   shift: "",
   notes: "",
   priority: "NORMAL",
-  operations: ["DELIVERY"]
+  operations: ["DELIVERY"],
+  requiresDepot: false,
 });
 
   const fetchClients = async () => {
@@ -123,6 +125,8 @@ setTimeout(() => {
           notes: form.notes,
           priority: form.priority,
           operations: form.operations,
+          requiresDepot:
+  form.requiresDepot,
         }
       );
 
@@ -132,7 +136,8 @@ setTimeout(() => {
   shift: "MORNING",
   notes: "",
   priority: "NORMAL",
-  operations:["DELIVERY"]
+  operations:["DELIVERY"],
+  requiresDepot: false,
 });
 
       fetchOrders();
@@ -649,7 +654,37 @@ outline-none
 
 </div>
         
+<div
+  className="
+  mt-4
+  flex
+  items-center
+  gap-3
+  "
+>
 
+  <input
+    type="checkbox"
+    checked={form.requiresDepot}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        requiresDepot:
+          e.target.checked,
+      })
+    }
+  />
+
+  <span
+    className="
+    text-sm
+    font-medium
+    "
+  >
+    Requiere pasar por depósito antes de esta visita
+  </span>
+
+</div>
         <input className="
 w-full
 border
@@ -1007,9 +1042,31 @@ duration-200
           ? "Retira"
           : "Cobra"}
       </span>
+      
+      
     )
-  )}
+  )}{order.requiresDepot && (
+  <span
+  className="
+  bg-brand-100
+  text-brand-700
+  px-3
+  py-1
+  rounded-full
+  text-sm
+  font-semibold
+  flex
+  items-center
+  gap-1
+  "
+>
+  <Warehouse size={14} />
+  Depósito
+</span>
+)}
+  
 </div>
+
           <div className="flex items-center gap-2 mt-2">
   <FileText size={16} />
   {order.notes || "Sin observaciones"}

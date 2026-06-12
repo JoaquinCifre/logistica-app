@@ -16,7 +16,8 @@ import {
   Navigation,
   Clock3,
   CheckCircle2,
-  ChevronDown
+  ChevronDown,
+  Warehouse
 } from "lucide-react";
 const MapView = dynamic(
   () => import("../components/OperationsMap"),
@@ -723,6 +724,22 @@ transition-all
           {" "}
           {nextOrder.client.name}
         </div>
+        {nextOrder.requiresDepot && (
+  <div
+  className="
+  text-xs
+  font-semibold
+  text-brand-700
+  mt-1
+  flex
+  items-center
+  gap-1
+  "
+>
+  <Warehouse size={12} />
+  Pasar por depósito
+</div>
+)}
 
         <div className="flex items-center gap-1 text-sm">
          <MapPin size={16} /> <span>{nextOrder.client.address}</span> 
@@ -748,7 +765,46 @@ transition-all
   mt-6
   "
 >
+{order.requiresDepot && (
 
+  <div
+    className="
+    bg-brand-50
+    border
+    border-brand-300
+    rounded-xl
+    p-4
+    mb-6
+    "
+  >
+
+    <div
+  className="
+  font-bold
+  text-brand-700
+  flex
+  items-center
+  gap-2
+  "
+>
+  <Warehouse size={18} />
+  Pasar por depósito
+</div>
+
+    <div
+      className="
+      mt-1
+      text-sm
+      "
+    >
+      Retirar material para:
+      {" "}
+      {order.client.name}
+    </div>
+
+  </div>
+
+)}
   <div
     className="
     flex

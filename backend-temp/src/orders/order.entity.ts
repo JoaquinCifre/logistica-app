@@ -49,4 +49,9 @@ priority: string;
   nullable: true,
 })
 completedAt: Date;
+
+@Column({
+  default: false,
+})
+requiresDepot: boolean;
 }
