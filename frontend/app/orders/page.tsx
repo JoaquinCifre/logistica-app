@@ -710,6 +710,7 @@ appearance-none
     text-sm
     font-medium
     gap-4
+    ml-2
     "
   >
     Requiere pasar por depósito antes de esta visita
