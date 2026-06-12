@@ -71,6 +71,7 @@ export default function OrderPage({
           operations: order.operations,
 requiresDepot:
   order.requiresDepot,
+  vehicle: order.vehicle,
         }
       );
 
@@ -528,6 +529,57 @@ hover:shadow-md
   text-slate-500
   "
 />
+</div>
+
+<label className="block mb-2 font-semibold">
+  Vehículo
+</label>
+
+<div className="relative mb-4">
+
+  <select
+    value={order.vehicle}
+    onChange={(e) =>
+      setOrder({
+        ...order,
+        vehicle: e.target.value,
+      })
+    }
+    className="
+    w-full
+    border
+    border-slate-200
+    rounded-xl
+    p-3
+    bg-white
+    shadow-sm
+    appearance-none
+    pr-10
+    "
+  >
+
+    <option value="LARGE">
+      Sprinter
+    </option>
+
+    <option value="SMALL">
+      Kangoo
+    </option>
+
+  </select>
+
+  <ChevronDown
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+
 </div>
         <label className="block mb-2 font-semibold">
   Prioridad

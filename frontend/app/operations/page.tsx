@@ -404,7 +404,26 @@ appearance-none
       Normal
     </span>
   )}
+<span
+  className="
+  bg-brand-100
+  text-brand-700
+  px-3
+  py-1
+  rounded-full
+  text-sm
+  font-semibold
+  inline-flex
+  items-center
+  gap-1
+  "
+>
+  <Truck size={14} />
 
+  {order.vehicle === "SMALL"
+    ? "Kangoo"
+    : "Sprinter"}
+</span>
 </div>
         <div
   className="
@@ -737,6 +756,7 @@ font-semibold
 <div className="mt-8">
 
   <h3 className="font-bold text-lg">
+    
     Próximas entregas
   </h3>
 
@@ -763,6 +783,23 @@ transition-all
           {" "}
           {nextOrder.client.name}
         </div>
+
+        <div
+  className="
+  text-xs
+  text-brand-700
+  flex
+  items-center
+  gap-1
+  mt-1
+  "
+>
+  <Truck size={12} />
+
+  {nextOrder.vehicle === "SMALL"
+    ? "Kangoo"
+    : "Sprinter"}
+</div>
         {nextOrder.requiresDepot && (
   <div
   className="

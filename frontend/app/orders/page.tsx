@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ChevronDown, Warehouse, Search, Calendar, Clock3, ClipboardList, FileText } from "lucide-react";
+import { ChevronDown, Warehouse, Search, Calendar, Clock3, ClipboardList, FileText, Truck } from "lucide-react";
 interface Client {
   id: number;
   name: string;
@@ -21,6 +21,7 @@ interface Order {
   completedAt?: string;
   operations: string[];
   requiresDepot: boolean;
+  vehicle:string;
 }
 
 export default function OrdersPage() {
@@ -52,6 +53,7 @@ const [messageType, setMessageType] =
   priority: "NORMAL",
   operations: ["DELIVERY"],
   requiresDepot: false,
+  vehicle: "LARGE",
 });
 
   const fetchClients = async () => {
@@ -127,6 +129,7 @@ setTimeout(() => {
           operations: form.operations,
           requiresDepot:
   form.requiresDepot,
+  vehicle: form.vehicle,
         }
       );
 
@@ -138,6 +141,7 @@ setTimeout(() => {
   priority: "NORMAL",
   operations:["DELIVERY"],
   requiresDepot: false,
+  vehicle: "LARGE",
 });
 
       fetchOrders();
@@ -653,7 +657,57 @@ outline-none
   />
 
 </div>
-        
+
+  <label className="block mb-2 font-semibold">
+  Vehículo
+</label>
+
+<div className="relative mb-4">
+
+  <select
+    value={form.vehicle}
+onChange={(e) =>
+  setForm({
+    ...form,
+    vehicle: e.target.value,
+  })
+}
+    className="
+    w-full
+    border
+    border-slate-200
+    rounded-xl
+    p-3
+    bg-white
+    shadow-sm
+    appearance-none
+    pr-10
+    "
+  >
+
+    <option value="LARGE">
+      Sprinter
+    </option>
+
+    <option value="SMALL">
+      Kangoo
+    </option>
+
+  </select>
+
+  <ChevronDown
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+
+</div>      
 <div
   className="
   mt-4
@@ -1013,6 +1067,7 @@ duration-200
     ? "Importante"
     : "Normal"}
 </div>
+
 <div
   className="
   flex
@@ -1060,8 +1115,29 @@ duration-200
 >
   Depósito
 </span>
+
 )}
-  
+  <span
+  className="
+  bg-brand-100
+  text-brand-700
+  px-3
+  py-1
+  mb-2
+  rounded-full
+  text-xs
+  font-medium
+  inline-flex
+  items-center
+  gap-1
+  "
+>
+  <Truck size={12} />
+
+  {order.vehicle === "SMALL"
+    ? "Kangoo"
+    : "Sprinter"}
+</span>
 </div>
 
           <div className="flex items-center gap-2 mt-2">
