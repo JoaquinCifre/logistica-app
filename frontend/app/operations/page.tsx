@@ -64,7 +64,7 @@ const [selectedDate, setSelectedDate] =
   route.length > 0
     ? route[0]
     : null;
-
+console.log("ORDER:", order);
  const updateStatus = async (
   status: string
 ) => {
@@ -217,7 +217,46 @@ appearance-none
   mt-6
   "
 >
+{order?.requiresDepot && (
 
+  <div
+    className="
+    bg-brand-50
+    border
+    border-brand-300
+    rounded-xl
+    p-4
+    mb-6
+    "
+  >
+
+    <div
+  className="
+  font-bold
+  text-brand-700
+  flex
+  items-center
+  gap-2
+  "
+>
+  <Warehouse size={18} />
+  Pasar por depósito
+</div>
+
+    <div
+      className="
+      mt-1
+      text-sm
+      "
+    >
+      Retirar material para:
+      {" "}
+      {order.client.name}
+    </div>
+
+  </div>
+
+)}
         <div
   className="
   inline-flex
@@ -732,6 +771,7 @@ transition-all
   text-brand-700
   mt-1
   flex
+  mb-1
   items-center
   gap-1
   "
@@ -765,46 +805,7 @@ transition-all
   mt-6
   "
 >
-{order?.requiresDepot && (
 
-  <div
-    className="
-    bg-brand-50
-    border
-    border-brand-300
-    rounded-xl
-    p-4
-    mb-6
-    "
-  >
-
-    <div
-  className="
-  font-bold
-  text-brand-700
-  flex
-  items-center
-  gap-2
-  "
->
-  <Warehouse size={18} />
-  Pasar por depósito
-</div>
-
-    <div
-      className="
-      mt-1
-      text-sm
-      "
-    >
-      Retirar material para:
-      {" "}
-      {order.client.name}
-    </div>
-
-  </div>
-
-)}
   <div
     className="
     flex

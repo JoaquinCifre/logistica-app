@@ -402,7 +402,9 @@ mx-auto
     gap-3
     "
   >
-
+<div className="p-2 bg-red-100">
+  {JSON.stringify(orders)}
+</div>
     {[
       {
         value: "DELIVERY",
@@ -1048,13 +1050,13 @@ duration-200
   )}{order.requiresDepot && (
   <span
   className="
-  bg-brand-100
+  bg-brand-200
   text-brand-700
   px-3
   py-1
   rounded-full
-  text-sm
-  font-semibold
+  text-xs
+  font-medium
   flex
   items-center
   gap-1
