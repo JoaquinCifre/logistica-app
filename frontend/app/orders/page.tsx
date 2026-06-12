@@ -667,7 +667,7 @@ outline-none
     font-medium
     text-slate-500
     mb-3
-    mt-4
+    mt-2
     ml-2
     "
   >
@@ -691,7 +691,6 @@ rounded-xl
 px-4
 py-3
 mt-2
-mb-2
 appearance-none
 bg-white
 text-slate-500
