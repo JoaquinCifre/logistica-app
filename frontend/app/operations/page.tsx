@@ -792,6 +792,7 @@ transition-all
   items-center
   gap-1
   mt-1
+  mb-2
   "
 >
   <Truck size={12} />

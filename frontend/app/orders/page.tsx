@@ -658,9 +658,7 @@ outline-none
 
 </div>
 
-  <label className="block mb-2 font-semibold">
-  Vehículo
-</label>
+
 
 <div className="relative mb-4">
 
@@ -673,16 +671,27 @@ onChange={(e) =>
   })
 }
     className="
-    w-full
-    border
-    border-slate-200
-    rounded-xl
-    p-3
-    bg-white
-    shadow-sm
-    appearance-none
-    pr-10
-    "
+        text-slate-500
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+mt-6
+mb-6
+appearance-none
+bg-white
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+"
   >
 
     <option value="LARGE">
@@ -728,6 +737,7 @@ text-slate-500
 px-4
 py-3
 mb-6
+mt-6
 shadow-sm
 transition-all
 duration-200

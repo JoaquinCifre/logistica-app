@@ -184,16 +184,24 @@ hover:shadow-md
     })
   }
   className="
-  w-full
-  border
-  border-slate-200
-  rounded-xl
-  p-3
-  bg-white
-  shadow-sm
-  appearance-none
-  pr-10
-  "
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+appearance-none
+pr-10
+"
 >
 
     {clients.map(
@@ -447,22 +455,24 @@ hover:shadow-md
       })
     }
     className="
-    w-full
-    border
-    border-slate-200
-    bg-white
-    rounded-xl
-    px-4
-    py-3
-    shadow-sm
-    transition-all
-    duration-200
-    focus:ring-2
-    focus:ring-brand-500
-    focus:border-brand-500
-    outline-none
-    appearance-none
-    "
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+appearance-none
+pr-10
+"
   />
 
   <Calendar
@@ -495,16 +505,24 @@ hover:shadow-md
     })
   }
   className="
-  w-full
-  border
-  border-slate-200
-  rounded-xl
-  p-3
-  bg-white
-  shadow-sm
-  appearance-none
-  pr-10
-  "
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+appearance-none
+pr-10
+"
 >
   
 
@@ -546,16 +564,24 @@ hover:shadow-md
       })
     }
     className="
-    w-full
-    border
-    border-slate-200
-    rounded-xl
-    p-3
-    bg-white
-    shadow-sm
-    appearance-none
-    pr-10
-    "
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+appearance-none
+pr-10
+"
   >
 
     <option value="LARGE">
@@ -596,17 +622,25 @@ hover:shadow-md
           e.target.value,
       })
     }
-    className="
-    w-full
-    border
-    border-slate-200
-    rounded-xl
-    p-3
-    bg-white
-    shadow-sm
-    appearance-none
-    pr-10
-    "
+   className="
+w-full
+border
+border-slate-200
+bg-white
+rounded-xl
+px-4
+py-3
+text-slate-500
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
+appearance-none
+pr-10
+"
   >
     <option value="NORMAL">
       Normal
