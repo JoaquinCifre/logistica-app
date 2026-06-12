@@ -51,6 +51,10 @@ priority: string;
 completedAt: Date;
 
 @Column({
+  default: "LARGE",
+})
+vehicle: string;
+@Column({
   default: false,
 })
 requiresDepot: boolean;
