@@ -957,7 +957,7 @@ duration-200
     .toLocaleDateString("es-AR")}
 </div>
 
-          <div className="flex items-center gap-2 mt-2">
+          <div className="flex items-center gap-2 mt-2 mb-2">
   <Clock3 size={16} />
   {
   order.shift === "MORNING"
