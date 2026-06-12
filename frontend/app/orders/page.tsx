@@ -1053,8 +1053,8 @@ duration-200
   px-3
   py-1
   rounded-full
-  text-sm
-  font-semibold
+  text-xs
+  font-medium
   "
 >
   Depósito
