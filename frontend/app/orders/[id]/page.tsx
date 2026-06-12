@@ -63,10 +63,14 @@ export default function OrderPage({
           notes: order.notes,
           priority:
             order.priority,
+            
           client: {
             id:
               order.client.id,
           },
+          operations: order.operations,
+requiresDepot:
+  order.requiresDepot,
         }
       );
 
@@ -196,11 +200,218 @@ hover:shadow-md
                 }
               >
                 {client.name}
+{" - "}
+{client.address}
               </option>
             )
           )}
         </select>
+<label
+  className="
+  block
+  mb-3
+  font-semibold
+  "
+>
+  Operaciones
+</label>
 
+<div
+  className="
+  grid
+  grid-cols-1
+  md:grid-cols-3
+  gap-3
+  mb-6
+  "
+>
+
+<button
+  type="button"
+  onClick={() => {
+
+    const exists =
+      order.operations?.includes(
+        "DELIVERY"
+      );
+
+    setOrder({
+      ...order,
+      operations: exists
+        ? order.operations.filter(
+            (op:string) =>
+              op !==
+              "DELIVERY"
+          )
+        : [
+            ...(order.operations ||
+              []),
+            "DELIVERY",
+          ],
+    });
+
+  }}
+  className={`
+    rounded-xl
+    p-3
+    border
+    font-semibold
+    transition-all
+
+    ${
+      order.operations?.includes(
+        "DELIVERY"
+      )
+        ? `
+          bg-brand-100
+          border-brand-300
+          text-brand-700
+        `
+        : `
+          bg-white
+          border-slate-200
+          text-slate-700
+        `
+    }
+  `}
+>
+  Entrega
+</button>
+
+<button
+  type="button"
+  onClick={() => {
+
+    const exists =
+      order.operations?.includes(
+        "PICKUP"
+      );
+
+    setOrder({
+      ...order,
+      operations: exists
+        ? order.operations.filter(
+            (op:string) =>
+              op !==
+              "PICKUP"
+          )
+        : [
+            ...(order.operations ||
+              []),
+            "PICKUP",
+          ],
+    });
+
+  }}
+  className={`
+    rounded-xl
+    p-3
+    border
+    font-semibold
+    transition-all
+
+    ${
+      order.operations?.includes(
+        "PICKUP"
+      )
+        ? `
+          bg-brand-100
+          border-brand-300
+          text-brand-700
+        `
+        : `
+          bg-white
+          border-slate-200
+          text-slate-700
+        `
+    }
+  `}
+>
+  Retira
+</button>
+
+<button
+  type="button"
+  onClick={() => {
+
+    const exists =
+      order.operations?.includes(
+        "COLLECTION"
+      );
+
+    setOrder({
+      ...order,
+      operations: exists
+        ? order.operations.filter(
+            (op:string) =>
+              op !==
+              "COLLECTION"
+          )
+        : [
+            ...(order.operations ||
+              []),
+            "COLLECTION",
+          ],
+    });
+
+  }}
+  className={`
+    rounded-xl
+    p-3
+    border
+    font-semibold
+    transition-all
+
+    ${
+      order.operations?.includes(
+        "COLLECTION"
+      )
+        ? `
+          bg-brand-100
+          border-brand-300
+          text-brand-700
+        `
+        : `
+          bg-white
+          border-slate-200
+          text-slate-700
+        `
+    }
+  `}
+>
+  Cobra
+</button>
+
+</div>
+
+<div
+  className="
+  flex
+  items-center
+  gap-3
+  mb-6
+  "
+>
+
+  <input
+    type="checkbox"
+    checked={
+      order.requiresDepot
+    }
+    onChange={(e) =>
+      setOrder({
+        ...order,
+        requiresDepot:
+          e.target.checked,
+      })
+    }
+  />
+
+  <span>
+    Requiere pasar por depósito antes de esta visita
+  </span>
+
+</div>
         <label className="block mb-2 font-semibold">
           Fecha
         </label>
@@ -314,7 +525,14 @@ hover:shadow-md
           "
         />
 
-        <div className="flex gap-3">
+        <div
+  className="
+  flex
+  justify-center
+  gap-3
+  mt-8
+  "
+>
 
           <button
             onClick={

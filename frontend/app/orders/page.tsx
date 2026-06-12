@@ -1048,14 +1048,15 @@ duration-200
   )}{order.requiresDepot && (
   <span
   className="
-  bg-brand-100
-  text-brand-700
-  px-3
-  py-1
-  rounded-full
-  text-xs
-  font-medium
-  "
+        bg-brand-100
+        text-brand-700
+        px-3
+        py-1
+        mb-2
+        rounded-full
+        text-xs
+        font-medium
+        "
 >
   Depósito
 </span>
