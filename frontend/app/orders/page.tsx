@@ -616,7 +616,7 @@ bg-white
 rounded-xl
 px-4
 py-3
-mt-4
+mt-6
 mb-6
 appearance-none
 bg-white
@@ -709,6 +709,7 @@ appearance-none
     className="
     text-sm
     font-medium
+    gap-4
     "
   >
     Requiere pasar por depósito antes de esta visita
