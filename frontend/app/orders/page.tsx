@@ -663,28 +663,7 @@ outline-none
   "
 >
 
-  <input
-    type="checkbox"
-    checked={form.requiresDepot}
-    onChange={(e) =>
-      setForm({
-        ...form,
-        requiresDepot:
-          e.target.checked,
-      })
-    }
-  />
-
-  <span
-    className="
-    text-sm
-    font-medium
-    "
-  >
-    Requiere pasar por depósito antes de esta visita
-  </span>
-
-</div>
+  </div>
         <input className="
 w-full
 border
@@ -714,7 +693,26 @@ appearance-none
           }
         />
 
-    
+    <input
+    type="checkbox"
+    checked={form.requiresDepot}
+    onChange={(e) =>
+      setForm({
+        ...form,
+        requiresDepot:
+          e.target.checked,
+      })
+    }
+  />
+
+  <span
+    className="
+    text-sm
+    font-medium
+    "
+  >
+    Requiere pasar por depósito antes de esta visita
+  </span>
         <button
   onClick={createOrder}
   className="
