@@ -200,9 +200,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -228,9 +237,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -256,9 +274,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -284,9 +311,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -312,9 +348,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -339,13 +384,22 @@ text-slate-700
         e.target.value,
     })
   }
-  className="
+ className="
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 
@@ -371,9 +425,18 @@ text-slate-700
 w-full
 border
 border-slate-200
+bg-white
 rounded-xl
-p-3
+px-4
+py-3
 mb-5
+shadow-sm
+transition-all
+duration-200
+focus:ring-2
+focus:ring-brand-500
+focus:border-brand-500
+outline-none
 "
 />
 <div
