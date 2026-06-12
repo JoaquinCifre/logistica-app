@@ -460,6 +460,7 @@ hover:shadow-md
     focus:ring-brand-500
     focus:border-brand-500
     outline-none
+    appearance-none
     "
   />
 
