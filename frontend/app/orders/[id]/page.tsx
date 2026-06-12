@@ -2,7 +2,7 @@
 
 import { useEffect, useState, use } from "react";
 import axios from "axios";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Calendar } from "lucide-react";
 export default function OrderPage({
   params,
 }: {
@@ -431,27 +431,51 @@ hover:shadow-md
 
 </div>
         <label className="block mb-2 font-semibold">
-          Fecha
-        </label>
+  Fecha
+</label>
 
-        <input
-          type="date"
-          value={order.date}
-          onChange={(e) =>
-            setOrder({
-              ...order,
-              date:
-                e.target.value,
-            })
-          }
-          className="
-          w-full
-          border
-          rounded-xl
-          p-3
-          mb-4
-          "
-        />
+<div className="relative mb-4">
+
+  <input
+    type="date"
+    value={order.date}
+    onChange={(e) =>
+      setOrder({
+        ...order,
+        date: e.target.value,
+      })
+    }
+    className="
+    w-full
+    border
+    border-slate-200
+    bg-white
+    rounded-xl
+    px-4
+    py-3
+    shadow-sm
+    transition-all
+    duration-200
+    focus:ring-2
+    focus:ring-brand-500
+    focus:border-brand-500
+    outline-none
+    "
+  />
+
+  <Calendar
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+
+</div>
 
         <label className="block mb-2 font-semibold">
           Turno
@@ -561,26 +585,46 @@ hover:shadow-md
         <label className="block mb-2 font-semibold">
           Observaciones
         </label>
+<div
+  className="
+  mt-4
+  flex
+  items-center
+  gap-3
+  "
+>
 
-        <textarea
-          value={
-            order.notes || ""
-          }
-          onChange={(e) =>
-            setOrder({
-              ...order,
-              notes:
-                e.target.value,
-            })
-          }
-          className="
-          w-full
-          border
-          rounded-xl
-          p-3
-          mb-6
-          "
-        />
+  </div>
+       <textarea
+  value={
+    order.notes || ""
+  }
+  onChange={(e) =>
+    setOrder({
+      ...order,
+      notes:
+        e.target.value,
+    })
+  }
+  className="
+  w-full
+  border
+  border-slate-200
+  bg-white
+  rounded-xl
+  text-slate-500
+  px-4
+  py-3
+  mb-6
+  shadow-sm
+  transition-all
+  duration-200
+  focus:ring-2
+  focus:ring-brand-500
+  focus:border-brand-500
+  outline-none
+  "
+/>
 
         <div
   className="
