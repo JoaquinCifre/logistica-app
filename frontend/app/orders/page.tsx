@@ -1049,13 +1049,13 @@ duration-200
   <span
   className="
   bg-brand-100
-  text-brand-900
-  px-3
+  text-brand-700
+  px-2
   py-1
   rounded-full
   text-xs
   font-medium
-  flex
+  inline-flex
   items-center
   gap-1
   "
