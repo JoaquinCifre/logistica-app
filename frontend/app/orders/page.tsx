@@ -661,7 +661,18 @@ outline-none
 
 
 <div className="relative mb-4">
-
+<div
+    className="
+    text-sm
+    font-medium
+    text-slate-500
+    mb-3
+    mt-4
+    ml-2
+    "
+  >
+   Vehículo
+  </div>
   <select
     value={form.vehicle}
 onChange={(e) =>
@@ -679,8 +690,8 @@ bg-white
 rounded-xl
 px-4
 py-3
-mt-6
-mb-6
+mt-2
+mb-2
 appearance-none
 bg-white
 text-slate-500
