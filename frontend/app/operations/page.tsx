@@ -765,7 +765,7 @@ transition-all
   mt-6
   "
 >
-{order.requiresDepot && (
+{order?.requiresDepot && (
 
   <div
     className="
