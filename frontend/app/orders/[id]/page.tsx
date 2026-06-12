@@ -2,7 +2,7 @@
 
 import { useEffect, useState, use } from "react";
 import axios from "axios";
-
+import { ChevronDown } from "lucide-react";
 export default function OrderPage({
   params,
 }: {
@@ -169,43 +169,61 @@ hover:shadow-md
           Cliente
         </label>
 
-        <select
-          value={
-            order.client.id
-          }
-          onChange={(e) =>
-            setOrder({
-              ...order,
-              client: {
-                id: Number(
-                  e.target.value
-                ),
-              },
-            })
-          }
-          className="
-          w-full
-          border
-          rounded-xl
-          p-3
-          mb-4
-          "
+        <div className="relative mb-4">
+<select
+  value={order.client.id}
+  onChange={(e) =>
+    setOrder({
+      ...order,
+      client: {
+        id: Number(
+          e.target.value
+        ),
+      },
+    })
+  }
+  className="
+  w-full
+  border
+  border-slate-200
+  rounded-xl
+  p-3
+  bg-white
+  shadow-sm
+  appearance-none
+  pr-10
+  "
+>
+
+    {clients.map(
+      (client) => (
+        <option
+          key={client.id}
+          value={client.id}
         >
-          {clients.map(
-            (client) => (
-              <option
-                key={client.id}
-                value={
-                  client.id
-                }
-              >
-                {client.name}
-{" - "}
-{client.address}
-              </option>
-            )
-          )}
-        </select>
+          {client.name}
+          {" - "}
+          {client.address}
+        </option>
+      )
+    )}
+
+  </select>
+
+  <ChevronDown
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+
+</div>
+          
 <label
   className="
   block
@@ -439,23 +457,32 @@ hover:shadow-md
           Turno
         </label>
 
-        <select
-          value={order.shift}
-          onChange={(e) =>
-            setOrder({
-              ...order,
-              shift:
-                e.target.value,
-            })
-          }
-          className="
-          w-full
-          border
-          rounded-xl
-          p-3
-          mb-4
-          "
-        >
+        <div className="relative mb-4">
+
+<select
+  value={order.shift}
+  onChange={(e) =>
+    setOrder({
+      ...order,
+      shift:
+        e.target.value,
+    })
+  }
+  className="
+  w-full
+  border
+  border-slate-200
+  rounded-xl
+  p-3
+  bg-white
+  shadow-sm
+  appearance-none
+  pr-10
+  "
+>
+  
+
+
           <option value="MORNING">
             Mañana
           </option>
@@ -465,41 +492,71 @@ hover:shadow-md
           </option>
         </select>
 
+        <ChevronDown
+  size={18}
+  className="
+  absolute
+  right-4
+  top-1/2
+  -translate-y-1/2
+  pointer-events-none
+  text-slate-500
+  "
+/>
+</div>
         <label className="block mb-2 font-semibold">
-          Prioridad
-        </label>
+  Prioridad
+</label>
 
-        <select
-          value={
-            order.priority
-          }
-          onChange={(e) =>
-            setOrder({
-              ...order,
-              priority:
-                e.target.value,
-            })
-          }
-          className="
-          w-full
-          border
-          rounded-xl
-          p-3
-          mb-4
-          "
-        >
-          <option value="NORMAL">
-            Normal
-          </option>
+<div className="relative mb-4">
 
-          <option value="IMPORTANT">
-            Importante
-          </option>
+  <select
+    value={order.priority}
+    onChange={(e) =>
+      setOrder({
+        ...order,
+        priority:
+          e.target.value,
+      })
+    }
+    className="
+    w-full
+    border
+    border-slate-200
+    rounded-xl
+    p-3
+    bg-white
+    shadow-sm
+    appearance-none
+    pr-10
+    "
+  >
+    <option value="NORMAL">
+      Normal
+    </option>
 
-          <option value="URGENT">
-            Urgente
-          </option>
-        </select>
+    <option value="IMPORTANT">
+      Importante
+    </option>
+
+    <option value="URGENT">
+      Urgente
+    </option>
+  </select>
+
+  <ChevronDown
+    size={18}
+    className="
+    absolute
+    right-4
+    top-1/2
+    -translate-y-1/2
+    pointer-events-none
+    text-slate-500
+    "
+  />
+
+</div>
 
         <label className="block mb-2 font-semibold">
           Observaciones

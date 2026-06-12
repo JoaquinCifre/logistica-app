@@ -376,7 +376,13 @@ p-3
 mb-5
 "
 />
-<div className="flex gap-3">
+<div
+  className="
+  flex
+  justify-center
+  gap-3
+  mt-8
+  ">
 
   <button
   onClick={saveClient}
