@@ -1050,17 +1050,13 @@ duration-200
   className="
   bg-brand-100
   text-brand-700
-  px-2
+  px-3
   py-1
   rounded-full
-  text-xs
-  font-medium
-  inline-flex
-  items-center
-  gap-1
+  text-sm
+  font-semibold
   "
 >
-  <Warehouse size={12} />
   Depósito
 </span>
 )}
