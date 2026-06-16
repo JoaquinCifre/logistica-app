@@ -620,8 +620,8 @@ bg-white
 rounded-xl
 px-4
 py-3
-mt-6
-mb-6
+mt-4
+mb-4
 appearance-none
 bg-white
 text-slate-500
@@ -666,7 +666,7 @@ outline-none
     text-sm
     font-medium
     text-slate-500
-    mb-3
+    mb-2
     mt-2
     ml-2
     "
@@ -690,7 +690,7 @@ bg-white
 rounded-xl
 px-4
 py-3
-mt-2
+
 appearance-none
 bg-white
 text-slate-500
