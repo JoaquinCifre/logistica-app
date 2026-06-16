@@ -719,7 +719,7 @@ outline-none
     className="
     absolute
     right-4
-    top-2
+    top-12
     -translate-y-1/2
     pointer-events-none
     text-slate-500
