@@ -620,8 +620,8 @@ bg-white
 rounded-xl
 px-4
 py-3
-mt-4
-mb-4
+mt-6
+mb-2
 appearance-none
 bg-white
 text-slate-500
